@@ -1,0 +1,188 @@
+#logo{
+    width: 50%;
+}
+
+nav{
+    background-color: #2a3d74;
+}
+
+/* Fondo del overlay (parte que oscurece el fondo) */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.1);  /* Cambia el valor del último parámetro para controlar la transparencia */
+}
+
+/* Fondo del modal (contenido del modal) */
+.modal-content {
+    background-color:  rgba(42, 61, 116,0.8);
+    color:white;
+}
+
+.sticky {
+    position: sticky;
+    top: 0; /* Para el primero */
+    z-index: 10;
+}
+
+.sticky-2 {
+    position: sticky;
+    top: 50px; /* Para el segundo, debajo del primero */
+    background-color: #ffffff;
+    z-index: 9; /* Menor z-index para estar debajo si es necesario */
+}
+
+#menu{
+    color:#2a3d74;
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 10px; /* Espacio entre los cuadros */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-auto-rows: 200px; /* Altura base de cada fila */
+  }
+  
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el contenido que se salga del cuadro */
+    position: relative;
+  }
+  /* Ajustar imágenes */
+    .item img {
+    width: 100%; /* La imagen ocupará el ancho completo del contenedor */
+    height: 100%; /* La imagen ocupará la altura completa del contenedor */
+    object-fit: cover; /* La imagen se recorta proporcionalmente para llenar el espacio */
+  }
+  
+  /* Cuadro grande (2x2) */
+  .item.large {
+    grid-column: span 2; /* Ocupa dos columnas */
+    grid-row: span 2; /* Ocupa dos filas */
+  }
+
+  /* Primer ítem: ocupa 1 columna de ancho y 2 filas de alto */
+  .item.tall {
+    grid-column: span 1; /* Una columna de ancho */
+    grid-row: span 3;    /* Dos filas de alto */
+  }
+  
+  /* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+  .item.wide {
+    grid-column: span 2; /* Dos columnas de ancho */
+    grid-row: span 2;    /* Una fila de alto */
+  }
+ /* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+  .item.wide2 {
+    grid-column: span 2; /* Dos columnas de ancho */
+    grid-row: span 1;    /* Una fila de alto */
+  }
+  .item.wide3 {
+    grid-column: span 2; /* Dos columnas de ancho */
+    grid-row: span 3;    /* Una fila de alto */
+  }
+  /* Media query para pantallas pequeñas */
+@media (max-width: 426px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Una sola columna */
+      grid-auto-rows: auto; /* Altura automática */
+    }
+    .item.large {
+      grid-column: span 1; /* Ocupa una sola columna */
+      grid-row: span 1; /* Ocupa una sola fila */
+    }
+    /* Primer ítem: ocupa 1 columna de ancho y 2 filas de alto */
+    .item.tall {
+        grid-column: span 1; /* Una columna de ancho */
+        grid-row: span 1;    /* Dos filas de alto */
+    }
+    /* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+    .item.wide {
+        grid-column: span 1; /* Dos columnas de ancho */
+        grid-row: span 1;    /* Una fila de alto */
+    }
+    /* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+    .item.wide2 {
+        grid-column: span 1; /* Dos columnas de ancho */
+        grid-row: span 1;    /* Una fila de alto */
+    }
+    .item.wide3 {
+      grid-column: span 1; /* Dos columnas de ancho */
+      grid-row: span 1;    /* Una fila de alto */
+    }
+    .titulo{
+      font-family: "Safira",sans-serif;
+      color: #2a3d74;
+      font-size: 25pt;
+    }
+    .fondo {
+      width: 100vw; /* Ocupa todo el ancho de la pantalla */
+      height: 100vh; /* Ocupa toda la altura de la pantalla */
+      margin: 0;
+      display: flex;
+      justify-content: center; /* Centra el contenido horizontalmente */
+      align-items: center; /* Centra el contenido verticalmente */
+    }
+    .peque{
+      margin: 10%;
+    }
+  }
+
+@font-face {
+  font-family: "Safira";
+  src: url("../fonts/Safira March Personal Use Only.ttf");
+}
+
+
+.titulo{
+  font-family: "Safira",sans-serif;
+  color: #2a3d74;
+  font-size: 40pt;
+}
+
+.permanent-marker-regular {
+  font-family: "Permanent Marker", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.toggle-symbol {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30px;
+  color:#fefefe;
+}
+
+.info {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item.show-info .info {
+  display: block;
+  opacity: 1;
+}
+
+.fondo{
+  background-image: url("../img/12379_R.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* Centra la imagen */
+  min-height: 100vh; /* Ajusta la altura mínima al 100% del viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  color: white; /* Asegura que el texto sea legible */
+}
+

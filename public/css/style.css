@@ -1,0 +1,612 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+.video {
+    width: 100%; /* Para que ocupe todo el ancho disponible */
+    max-width: 250vh; /* Límite máximo de tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.p_t{
+    position: relative;
+    color:white;
+    font-size: 30pt;
+    left: 80%;
+}
+
+.menu{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    font-size: 30pt;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    gap: 10px; /* Espacio entre los cuadros */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-auto-rows: 27%; /* Altura base de cada fila */
+}
+  
+.item {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+/* Ajustar imágenes */
+.item img {
+width: 100%; /* La imagen ocupará el ancho completo del contenedor */
+height: 100%; /* La imagen ocupará la altura completa del contenedor */
+object-fit: cover; /* La imagen se recorta proporcionalmente para llenar el espacio */
+}
+
+/* Cuadro grande (2x2) */
+.item.large {
+grid-column: span 2; /* Ocupa dos columnas */
+grid-row: span 2; /* Ocupa dos filas */
+}
+
+/* Primer ítem: ocupa 1 columna de ancho y 2 filas de alto */
+.item.tall {
+grid-column: span 1; /* Una columna de ancho */
+grid-row: span 3;    /* Dos filas de alto */
+}
+
+/* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+.item.wide {
+grid-column: span 2; /* Dos columnas de ancho */
+grid-row: span 2;    /* Una fila de alto */
+}
+/* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
+.item.wide2 {
+grid-column: span 2; /* Dos columnas de ancho */
+grid-row: span 1;    /* Una fila de alto */
+}
+.item.wide3 {
+grid-column: span 2; /* Dos columnas de ancho */
+grid-row: span 3;    /* Una fila de alto */
+}
+
+@media(max-width:1024px) and (min-width:576px){
+    .p_t{
+        font-size: 25pt;
+    }
+    
+    .menu{
+        font-size: 25pt;
+    }
+    .grid-container {
+        grid-auto-rows: 25%; /* Altura base de cada fila */
+    }
+}
+@media(min-width: 376px) and (max-width: 576px){
+    .p_t{
+        font-size: 14pt;
+    }
+    
+    .menu{
+        font-size: 14pt;
+    }
+    .grid-container {
+        grid-auto-rows: 22%; /* Altura base de cada fila */
+    }
+}
+@media (min-width: 321px) and (max-width: 376px) {
+
+    .p_t{
+        font-size: 10pt;
+    }
+    
+    .menu{
+        font-size: 10pt;
+    }
+    .grid-container {
+        grid-auto-rows: 22%; /* Altura base de cada fila */
+    }
+}
+
+@media (max-width: 321px) {
+    .p_t{
+        font-size: 10pt;
+    }
+    .menu{
+        font-size: 10pt;
+    }
+    .grid-container {
+        grid-auto-rows: 22%; /* Altura base de cada fila */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.capitulo1{
+    background-color: #3b92a3;
+}
+.capitulo2{
+    background-color: #57a5b5;
+}
+.capitulo3{
+    background-color: #adccd2;
+}
+.capitulo4{
+    background-color: #a1c4d4;
+}
+.capitulo5{
+    background-color: #b7cbe7;
+}
+.obra1{
+    background-color: #523b30;
+}
+/***************************************************************************/
+
+/*LETRAS*/
+
+.fira-sans-extralight {
+font-family: "Fira Sans", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+
+.fira-sans-light {
+font-family: "Fira Sans", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+.fira-sans-regular {
+font-family: "Fira Sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.fira-sans-medium {
+font-family: "Fira Sans", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.fira-sans-semibold {
+font-family: "Fira Sans", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+  
+.fira-sans-bold {
+font-family: "Fira Sans", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.fira-sans-extrabold {
+font-family: "Fira Sans", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.permanent-marker-regular {
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Safira";
+    src: url("../fonts/Safira March Personal Use Only.ttf");
+}
+@font-face {
+    font-family: "Lulo";
+    src: url("../fonts/Lulo-Clean-W01-One-Bold.ttf");
+}
+.titulo{
+    font-family: 'Safira', sans-serif;
+    letter-spacing: 0.35em;
+}
+.ind{
+    font-family: 'Safira', sans-serif;
+}
+
+.numero{
+    font-family: 'Lulo', sans-serif;
+}
+
+.subtitulo,.a_titulo,.texto-movil,.menu,.p_t{
+    font-family: 'Bebas Neue', sans-serif; /* Incluye una fuente de respaldo como sans-serif */
+}
+
+.subtitulo{
+    color:#fcac3c;
+}
+
+.subtitulo{
+    font-size: 2.3rem;
+}
+
+.sorolla,.numero{
+    color:#07517f;
+}
+/*Portada*/
+.explicacion{
+    background-color: rgb(252, 212, 140,0.5);
+}
+ /* Animación para mover el texto a la izquierda */
+ @keyframes moverIzquierda {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Estilo del contenedor */
+  .contenedor {
+    overflow: hidden;
+    width: 100%; /* Ajusta el ancho del contenedor */
+  }
+
+  /* Estilo del texto y la animación */
+  .texto-movil {
+    display: inline-block;
+    font-size: 4rem; /* Puedes cambiar el tamaño del texto */
+    font-weight: bold;
+    white-space: nowrap;
+    animation: moverIzquierda 40s linear infinite; /* 10s es la duración, ajusta según necesites */
+  }
+   /* Repetir el texto de forma continua */
+   .texto-movil span {
+    display: inline-block;
+    padding-right: 50px; /* Añadimos un espacio entre cada repetición */
+  }
+
+/*Introducción*/
+.menu{
+    height: 50vh;
+}
+.menu-item{
+    height: 50vh;
+    width: 10vw;
+}
+.img-item{
+    background-image: url('../img/verano.jpg');
+    background-size: cover; /* Escala la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */
+}
+.img2-item{
+    background-image: url('../img/galeria_petit.jpg');
+    background-size: cover; /* Escala la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */
+}
+
+@media (min-width: 1024px) {
+
+    .numero{
+        font-size: 6rem; 
+    }
+    .titulo{
+        font-size: 3rem; 
+    }
+    .ind{
+        font-size:2.5rem;
+    }
+    .a_titulo{
+        font-size: 5rem; 
+    }
+}
+
+@media(max-width:1024px) and (min-width:576px){
+
+    .numero {
+        font-size: 8rem;
+    }
+    .titulo{
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 576px) {
+
+    .numero {
+        font-size: 3.5rem;
+    }
+    .titulo{
+        font-size: 1.8rem; 
+    }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+
+    .numero {
+        font-size: 3rem; 
+    }
+    .titulo{
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 321px) {
+
+    .numero {
+        font-size: 2.5rem;
+    }
+    .titulo,.subtitulo {
+        font-size: 1.3rem; 
+    }
+
+}
+
+/*ANIMACIONES*/
+/* Animación para hacer que los números deslicen desde arriba */
+@keyframes slide-top {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-top {
+    display: inline-block;
+    opacity: 0; /* Inicialmente oculto para la animación */
+}
+
+/* Agregar retraso a cada número para crear un efecto secuencial */
+.slide-top:nth-child(1) {
+    animation-delay: 0s; /* Sin retraso */
+}
+.slide-top:nth-child(2) {
+    animation-delay: 0.1s; /* Retraso para el segundo número */
+}
+.slide-top:nth-child(3) {
+    animation-delay: 0.2s; /* Retraso para el tercer número */
+}
+.slide-top:nth-child(4) {
+    animation-delay: 0.3s; /* Retraso para el cuarto número */
+}
+.slide-top.show {
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/*Capitulo 1*/
+
+.cuadro {
+    position: relative;
+    perspective: 1000px; /* Asegura que la perspectiva se aplique al elemento principal */
+}
+
+.cuadro div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Esconde el lado opuesto durante la rotación */
+    transition: transform 1s; /* Cambié 'transition' a 'transform' para asegurar una transición suave */
+}
+
+.cuadro .front {
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro .front h1 {
+    position: absolute; /* Permite ubicar el texto dentro del contenedor */
+    bottom: 10px; /* Ajusta según el espacio que quieras desde abajo */
+    left: 10px; /* Ajusta según el espacio que quieras desde la izquierda */
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño del texto */
+    color:white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para mejor contraste */
+}
+
+.cuadro1 .front {
+    background-image: url('../img/sol_de_tarde.jpg');
+}
+
+.cuadro2 .front {
+    background-image: url('../img/verano.jpg');
+}
+
+.cuadro3 .front {
+    background-image: url('../img/Georges_Petit.png');
+}
+
+.cuadro4 .front {
+    background-image: url('../img/pedro_gil.jpg');
+}
+
+.cuadro .back {
+    background-color: rgb(251, 251, 251);
+    font-size: 0.7rem;
+    transform: rotateY(180deg); /* La cara posterior comienza en 180deg, invisible inicialmente */
+}
+
+.cuadro.active .front {
+    transform: rotateY(180deg); /* Rota la cara frontal al activarse */
+}
+
+.cuadro.active .back {
+    transform: rotateY(0deg); /* Muestra la cara trasera al activarse */
+}
+/* Estilo personalizado para limitar la altura */
+.img-custom {
+    height: 35vh; /* Altura fija del 40% del viewport */
+    object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsión */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+@media (min-width: 1024px) {
+    .cuadro{
+        height: 60vh;
+    }
+}
+
+@media(max-width:1024px) and (min-width:576px){
+    .cuadro{
+        height: 60vh;
+    }
+    .img-custom{
+        height: 45vh; /* Altura fija del 40% del viewport */
+        object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsión */
+        width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+        margin-bottom: 1rem; /* Ajusta el valor como necesites */
+    }
+}
+
+@media(max-width: 576px) {
+    .cuadro{
+        height: 40vh;
+    }
+    .margen{
+        margin-top: 1rem; /* Ajusta el valor como necesites */
+    }
+}
+
+/*Capitulo 2*/
+
+.pedro_gil{
+    width: 20vw;
+    height: 50vh;
+}
+
+.acordeon{
+    height: 40vh;
+    width: 60vh;
+}
+
+@media (min-width: 1024px) {
+    .card_expo{
+        width: 50vw;
+    }
+    .artes{
+        height: 50vh;
+        width: 15vw;
+    }
+    .nombre_fotos{
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:1024px) and (min-width:576px){
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        height: 50vh;
+        width: 20vw;
+    }
+    .margen{
+        margin-top: 1rem; /* Ajusta el valor como necesites */
+    }
+}
+
+@media (min-width: 376px) and (max-width: 576px) {
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        height: 50vh;
+        width: 35vw;
+    }
+    .nombre_fotos{
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        height: 45vh;
+        width: 35vw;
+    }
+    .nombre_fotos{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 321px) {
+    .card_expo{
+        width: 90vw;
+    }
+    .artes{
+        height: 45vh;
+        width: 38vw;
+    }
+    .nombre_fotos{
+        font-size: 1.2rem;
+    }
+}
+
+/*capitulo 3*/
+@font-face {
+    font-family: "Safira";
+    src: url("/fonts/Safira March Personal Use Only.ttf");
+}
+@font-face {
+    font-family: "Lulo";
+    src: url("/fonts/Lulo-Clean-W01-One-Bold.ttf");
+}
+
+.c3_explicacion{
+    font-family: "Safira",sans-serif;
+    color: #2a3d74;
+    font-size: 25pt;
+    letter-spacing: 0.35em;
+    text-align: center;
+}
+
+.c3_tit{
+    font-family: "Lulo",sans-serif;
+    font-size: 20pt;
+}
+
+/* Grid estilo Pinterest usando columnas */
+.pinterest-grid {
+    column-count: 3;
+    column-gap: 1em;
+  }
+  .pinterest-grid .item {
+    background: #fff;
+    margin-bottom: 1em;
+    display: inline-block; /* Necesario para que se comporte bien en columnas */
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  .pinterest-grid .item img {
+    width: 100%;
+    display: block;
+  }
+  .pinterest-grid .item .desc {
+    padding: 10px;
+  }
+  /* Adaptabilidad: Ajuste de columnas en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .pinterest-grid {
+      column-count: 2;
+    }
+  }
+  .expo{
+    width: 100%;
+    display: block;
+  }
