@@ -1,138 +1,152 @@
+
 body {
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
 }
-.video {
-    width: 100%; /* Para que ocupe todo el ancho disponible */
-    max-width: 250vh; /* Límite máximo de tamaño */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+
+/*portada*/
+.nav-logo{
+    color:#07517f;
+}
+.nav-logo:hover{
+    color:#ffffff;
+}
+.nav-menu{
+    color:#07517f;
+    font-size:20pt;
+}
+.bg-offcanvas{
+    background: rgba(251, 252, 252, 0.4);
 }
 
 .p_t{
     position: relative;
     color:white;
-    font-size: 30pt;
-    left: 80%;
+    font-size: 50pt;
 }
 
-.menu{
+.menu-tit{
     position: relative;
     color:white;
     text-decoration: none;
-    font-size: 30pt;
+    font-family: 'Safira', sans-serif;
+    font-size: 50pt;
 }
 
-.grid-container {
+.menu-subtit{
     position: relative;
-    display: grid;
-    gap: 10px; /* Espacio entre los cuadros */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    grid-auto-rows: 27%; /* Altura base de cada fila */
-}
-  
-.item {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-/* Ajustar imágenes */
-.item img {
-width: 100%; /* La imagen ocupará el ancho completo del contenedor */
-height: 100%; /* La imagen ocupará la altura completa del contenedor */
-object-fit: cover; /* La imagen se recorta proporcionalmente para llenar el espacio */
+    color:white;
+    text-decoration: none;
+    font-size: 50pt;
 }
 
-/* Cuadro grande (2x2) */
-.item.large {
-grid-column: span 2; /* Ocupa dos columnas */
-grid-row: span 2; /* Ocupa dos filas */
+.image-container {
+    position: relative;
+    width: 100vw;  /* Ocupar todo el ancho de la pantalla */
+    height: 100vh; /* Ocupar toda la altura de la pantalla */
+    overflow: hidden; /* Evita que se vean espacios no deseados */
+    margin: 0; /* Asegura que no haya márgenes extra */
+    padding: 0; /* Elimina posibles espacios internos */
 }
 
-/* Primer ítem: ocupa 1 columna de ancho y 2 filas de alto */
-.item.tall {
-grid-column: span 1; /* Una columna de ancho */
-grid-row: span 3;    /* Dos filas de alto */
+.full-width-image {
+    width: 100vw;  /* Se expande completamente en ancho */
+    height: 100vh; /* Se expande completamente en altura */
+    object-fit: cover; /* Cubre todo sin distorsionarse */
+    display: block; /* Evita márgenes extra inesperados */
 }
 
-/* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
-.item.wide {
-grid-column: span 2; /* Dos columnas de ancho */
-grid-row: span 2;    /* Una fila de alto */
-}
-/* Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto */
-.item.wide2 {
-grid-column: span 2; /* Dos columnas de ancho */
-grid-row: span 1;    /* Una fila de alto */
-}
-.item.wide3 {
-grid-column: span 2; /* Dos columnas de ancho */
-grid-row: span 3;    /* Una fila de alto */
+
+.text-overlay {
+    position: absolute;
+    bottom: 0%;   /* Ajusta la posición del texto desde la parte superior */
+    left: 70%;  /* Ajusta la posición del texto desde la izquierda */
+    color: white;  /* Color blanco para que el texto sea visible sobre la imagen */
+    font-family: "Arial", sans-serif;
+    z-index: 2;   /* Asegura que el texto esté por encima de la imagen */
 }
 
 @media(max-width:1024px) and (min-width:576px){
     .p_t{
-        font-size: 25pt;
+        font-size: 50pt;
     }
     
-    .menu{
-        font-size: 25pt;
+    .menu-tit{
+        font-size: 50pt;
     }
-    .grid-container {
-        grid-auto-rows: 25%; /* Altura base de cada fila */
+    
+}
+@media(max-width:769px){
+    .text-overlay {
+        left: 60% !important;
     }
 }
 @media(min-width: 376px) and (max-width: 576px){
     .p_t{
-        font-size: 14pt;
+        font-size: 40pt;
     }
     
-    .menu{
-        font-size: 14pt;
+    .menu-tit{
+        font-size: 20pt;
     }
-    .grid-container {
-        grid-auto-rows: 22%; /* Altura base de cada fila */
+    .menu-subtit{
+        font-size: 15pt;
+    }
+    .text-overlay {
+        left: 45% !important;
     }
 }
 @media (min-width: 321px) and (max-width: 376px) {
 
     .p_t{
-        font-size: 10pt;
+        font-size: 40pt;
     }
     
-    .menu{
+    .menu-tit{
         font-size: 10pt;
     }
-    .grid-container {
-        grid-auto-rows: 22%; /* Altura base de cada fila */
+    .image-container {
+        width: 100vw;  /* Asegura que el contenedor ocupe toda la pantalla */
+        height: 100vh;
+    }
+
+    .full-width-image {
+        width: 100vw;  /* Evita desbordamientos */
+        height: 100vh; 
+        object-fit: cover;
+    }
+    .text-overlay {
+        left: 35% !important;
     }
 }
 
 @media (max-width: 321px) {
     .p_t{
+        font-size: 40pt;
+    }
+    .menu-tit{
         font-size: 10pt;
     }
-    .menu{
-        font-size: 10pt;
+    .image-container {
+        width: 100vw;  /* Asegura que el contenedor ocupe toda la pantalla */
+        height: 100vh;
     }
-    .grid-container {
-        grid-auto-rows: 22%; /* Altura base de cada fila */
+
+    .full-width-image {
+        width: 100vw;  /* Evita desbordamientos */
+        height: 100vh; 
+        object-fit: cover;
+    }
+    .text-overlay {
+        left: 30% !important;
     }
 }
-
-
-
-
-
-
-
-
-
-
+/*---------------------------------------------------------------------------------------------*/
 .capitulo1{
-    background-color: #3b92a3;
+    background-color: #9baeba;
 }
 .capitulo2{
     background-color: #57a5b5;
@@ -141,7 +155,8 @@ grid-row: span 3;    /* Una fila de alto */
     background-color: #adccd2;
 }
 .capitulo4{
-    background-color: #a1c4d4;
+    background-color: #adccd2;
+    height: 130vh;
 }
 .capitulo5{
     background-color: #b7cbe7;
@@ -213,7 +228,7 @@ font-style: normal;
     font-family: 'Safira', sans-serif;
     letter-spacing: 0.35em;
 }
-.ind{
+.ind,.cabecera{
     font-family: 'Safira', sans-serif;
 }
 
@@ -221,12 +236,12 @@ font-style: normal;
     font-family: 'Lulo', sans-serif;
 }
 
-.subtitulo,.a_titulo,.texto-movil,.menu,.p_t{
+.subtitulo,.a_titulo,.texto-movil,.p_t{
     font-family: 'Bebas Neue', sans-serif; /* Incluye una fuente de respaldo como sans-serif */
 }
 
 .subtitulo{
-    color:#fcac3c;
+    color:#07517f;
 }
 
 .subtitulo{
@@ -579,7 +594,53 @@ font-style: normal;
     font-family: "Lulo",sans-serif;
     font-size: 20pt;
 }
+@media (max-width: 428px) {
+    .c3_tit{
+        font-size: 12pt !important;
+    }
+    .btn-custom {
+        padding: 5px 10px !important;
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 376px) {
+    .c3_tit{
+        font-size: 10pt !important;
+    }
+    .c3_explicacion{
+        font-size: 20pt !important;
+    }
+}
+@media (max-width: 321px) {
+    .c3_explicacion{
+        font-size: 17pt !important;
+    }
+}
+.card-custom {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: none; /* Sin borde */
+    border-radius: 0; /* Sin esquinas redondeadas */
+    background-color: white; /* Fondo */
+    padding: 20px; /* Espaciado interno opcional */
+}
 
+.btn-custom {
+    background-color: #2a3d74;
+    color: white;
+    border: none; /* Sin borde */
+    border-radius: 0; /* Sin esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado */
+    transition: background-color 0.3s ease; /* Efecto suave */
+}
+
+.btn-custom:hover {
+    background-color: #2a3d74; /* Cambio de color al pasar el mouse */
+    color: white;
+}
+
+.text-end {
+    text-align: right; /* Alinea el botón a la derecha */
+}
 /* Grid estilo Pinterest usando columnas */
 .pinterest-grid {
     column-count: 3;
@@ -610,3 +671,148 @@ font-style: normal;
     width: 100%;
     display: block;
   }
+
+
+  /*capitulo 4*/
+.cap4-titulo{
+    font-family: "Lulo",sans-serif;
+    color: white;
+    font-size: 25pt;
+    letter-spacing: 0.35em;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 6%;
+    margin-bottom: 5%;
+}
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; /* Oculta las cartas que no están en pantalla */
+    margin: 0 auto; /* Centra el carrusel */
+}
+
+.carousel {
+    display: flex; /* Para que las cartas estén en línea */
+    transition: transform 0.5s ease; /* Transición suave para el desplazamiento */
+}
+
+.card-reco {
+    margin: 0 10px; /* Añade margen para separar las cartas */
+    flex: 0 0 auto; /* Evita que las cartas se redimensionen */
+    width: 70%; /* Cada carta ocupa todo el espacio disponible en el carrusel */
+    height: 80vh;
+    background-color: #fcf1d0;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.5s ease; /* Añade transición suave para el movimiento */
+    box-sizing: border-box;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between; /* Coloca el título/texto a la izquierda y la imagen a la derecha */
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.card-text {
+    flex: 1;
+    padding-right: 1%; /* Espacio entre el texto y la imagen */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-family: "Lulo",sans-serif;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.card-image {
+    width: 30%; /* Tamaño de la imagen */
+    height: 30%; /* Tamaño de la imagen */
+}
+
+.prev, .next {
+    font-size: 2rem; /* Aumenta el tamaño de la fuente */
+    padding: 15px 30px; /* Aumenta el padding para hacer los botones más grandes */
+    color: rgb(5, 5, 5); /* Color del texto */
+    border: none; /* Elimina el borde */
+    border-radius: 50%; /* Hace que los botones sean redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: black;
+}
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 768px) {
+
+    .card-reco {
+        width: 87%; /* Se ajusta el tamaño de la carta para móviles */
+        margin: 0 20px !important; /* Reduce el margen */
+        height: 60vh;
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.9rem; /* Reduce el tamaño de la descripción */
+    }
+
+    .card-image {
+        max-width: 40% !important; /* Ajusta el tamaño de la imagen en móviles */
+        height: auto;
+    }
+}
+
+/* Media query para pantallas muy pequeñas, como móviles en modo vertical */
+@media (max-width: 480px) {
+    .cap4-titulo{
+        font-size: 15pt !important;
+    }
+
+    .card-reco {
+        width: 90%; /* Las cartas ocupan el 100% del ancho */
+        height: 60vh;
+    }
+
+    .card-title {
+        font-size: 1rem; /* Reduce aún más el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.6rem; /* Ajusta la descripción para que se lea bien */
+    }
+
+    .card-image {
+        width: 50% !important; /* Reduce el tamaño de la imagen */
+        height: 50% !important;
+    }
+}

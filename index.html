@@ -5,264 +5,654 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!--<link rel="stylesheet" href="css/inicio.css">-->
-    <link rel="stylesheet" href="/sorolla_pruebas/css/inicio.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="js/firebase.js" type="module" defer></script>
-    <script src="js/inicio.js" defer></script>
 </head>
 <body>
-    <nav class="navbar sticky">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-between w-100 align-items-center">
-          <!-- Enlaces o elementos al inicio -->
-          <ul class="navbar-nav flex-row">
-            <li class="nav-item me-3">
-              <a class="nav-link text-white" href="#">LUCE<span class="permanent-marker-regular">S</span> DEL ARTE</a>
-            </li>
-          </ul>
-          <!-- Botón al final -->
-          <button type="button" class="btn btn-outline-light d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#inicio">
-            <i class="bi bi-person-circle me-2"></i> Iniciar sesion
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modal Inicio sesion -->
-    <div class="modal fade" id="inicio" tabindex="-1"aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row d-flex justify-content-end me-2">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="mt-3 mb-3">
-                    <form id="email-login-form">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Introduce tu correo">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success rounded-pill">Iniciar sesión</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="container d-flex justify-content-center mb-3">
-                    Si no tienes cuenta ,
-                    <a href="#" class="text-light" data-bs-toggle="modal" data-bs-target="#registro">
-                        registrarte
-                    </a>
-                </div>
-                <div class="row d-flex justify-content-end">
-                    <p class="text-center text-dark">or</p>
-                    <!-- Botón de Google -->
-                    <button type="button" id="google-login-btn" class="btn btn-primary rounded-pill mt-1">
-                        <i class="bi bi-google me-3"></i>Login with Google
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        </div>
-    </div>
-    
-    <!-- Modal Registro-->
-    <div class="modal fade" id="registro" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row d-flex justify-content-end me-2">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="mt-3">
-                    <form id="email-signup-form">
-                        <div class="mb-3">
-                            <label for="email_reg" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email_reg" placeholder="Introduce tu correo">
-                            <small class="text-danger d-none" id="registrado">El correo electrónico ya está registrado</small>
-                            <small class="text-danger d-none" id="invalido">El formato del correo electrónico es inválido</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password_reg" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password_reg" placeholder="Introduce tu contraseña">
-                            <small class="text-danger d-none" id="longitud">La contraseña debe tener al menos 6 caracteres</small>
-                            <small class="text-danger d-none" id="especial">La contraseña debe contener al menos una letra mayúscula, un número y un símbolo especial</small>
-                        </div>
-                        <button type="submit" class="btn btn-success rounded-pill">Registrarse</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-interval="2000" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/portada1.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/portada2.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/portada3.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/portada4.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <nav class="navbar navbar-expand-md sticky-2">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-        <!-- Botón centrado en pantallas pequeñas -->
-        <button class="navbar-toggler border-0 d-lg-none d-md-none mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span id="menu"><i class="bi bi-list"></i></span>
-        </button>
-      
-          <!-- Menú visible solo en pantallas grandes -->
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active text-dark" href="#biografia">Biografía</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-dark" href="#cuadros">Cuadros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-dark" href="#perspectiva">Perspectiva</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-dark" href="#explora">Explora</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg fixed-top border border-white bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-logo" href="#">LUCE<span class="permanent-marker-regular">S</span> DEL ARTE</a>
+          <button class="btn nav-menu d-block d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-list"></i></button>
+          <button class="btn nav-menu d-none d-sm-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-list"></i></button>
         </div>
       </nav>
-    <!--BIOGRAFIA-->
-    <h1 class="titulo m-5 d-flex justify-content-between col-3" ><i>01</i>Biografía</h1>
-    <section>
-      <div class="container grid-container mb-5">
-        <!-- Primer ítem: ocupa 1 columna de ancho y 2 filas de alto -->
-        <div class="item tall"><img src="img/retrato.jpg" alt=""></div>
-        <!-- Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto -->
-        <div class="item wide3 align-items-center">Joaquín Sorolla (1863-1923) fue un pintor español destacado por sus obras llenas de luz y color, representando principalmente escenas costumbristas, paisajes y retratos. Nacido en Valencia, quedó huérfano a los dos años y creció bajo el cuidado de sus tíos. Estudió arte en su ciudad natal y luego en Madrid, perfeccionándose en Roma y París, donde consolidó su estilo impresionista. Su fama internacional llegó con obras como Cosiendo la vela y su serie monumental para la Hispanic Society of America. Murió en Cercedilla tras sufrir una hemiplejía, dejando un legado que celebra la luz mediterránea y la vida cotidiana.</div>
+    <div class="offcanvas offcanvas-end bg-offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn text-start ms-0  nav-menu" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
       </div>
-    </section>
-    <!--CUADROS-->
-    <h1 class="titulo m-5 d-flex justify-content-between col-3" ><i>02</i>Cuadros</h1>
-    <section class="m-5">
-      <div class="container grid-container">
-        <!-- Primera fila -->
-        <div class="item" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          <img src="img/sol_de_tarde.jpg" alt="">
-          <div class="info">"Sol de la tarde" (1903) de Sorolla captura la luz cambiante del Mediterráneo, destacando su fascinación por la luz en diversas horas del día.</div>
-        </div>
-        <div class="item" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          2
-          <div class="info">Información de la imagen 2</div>
-        </div>
-        <div class="item" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          3
-          <div class="info">Información de la imagen 3</div>
-        </div>
-        
-        <!-- Segunda fila -->
-        <div class="item large" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          <img src="img/cosiendo_la_vela.jpg" alt="">
-          <div class="info">"Cosiendo la vela" (1896) refleja su habilidad para capturar escenas cotidianas con luz y color, destacando la vida y costumbres de su tierra.</div>
-        </div>
-        <div class="item" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          5
-          <div class="info">Información de la imagen 5</div>
-        </div>
-        <div class="item" onclick="toggleContent(this)">
-          <span class="toggle-symbol"><i class="bi bi-plus-circle-fill"></i></span>
-          6
-          <div class="info">Información de la imagen 6</div>
-        </div>
+      <div class="offcanvas-body text-end">
+        <a href="/menu" class="menu-tit">Volver al menu</a>
+        <br>
+        <a href="#" class="menu-tit">Contexto Histórico</a>
+        <br>
+        <a href="#inicio" class="menu-subtit">Inicio</a>
+        <br>
+        <a href="#capitulo-1" class="menu-subtit">Razones</a>
+        <br>
+        <a href="#capitulo-2" class="menu-subtit">Antes de la exposición</a>
+        <br>
+        <a href="#capitulo-3" class="menu-subtit">Exposición</a>
+        <br>
+        <a href="#capitulo-4" class="menu-subtit">Reconocimiento después de la exposición</a>
+        <br>
       </div>
-    </section>
-    
-    <!--PERSPECTIVAS-->
-    <section class="fondo mb-5" id="perspectiva">
-      <div class="peque container">
-        <p>DESCUBRE COMO FIGURAS CLAVE REACCIONARON ANTE SU OBRA:</p>
-        <div class="accordion" id="sorollaAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingMauclair">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMauclair" aria-expanded="true" aria-controls="collapseMauclair">
-                Camille Mauclair
-              </button>
-            </h2>
-            <div id="collapseMauclair" class="accordion-collapse collapse" aria-labelledby="headingMauclair" data-bs-parent="#sorollaAccordion">
-              <div class="accordion-body">
-                "Parece que se haya revelado como triunfador quien hasta entonces era un desconocido... un contraste impresionante entre su rango de pintor extranjero y la gloria que le sobrevino."
-              </div>
+    </div>
+    <div class="offcanvas offcanvas-top bg-offcanvas" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-body">
+        <a href="/menu" class="menu-tit">Volver al menu</a>
+        <br>
+        <a href="#" class="menu-tit">Contexto Histórico</a>
+        <br>
+        <a href="#inicio" class="menu-subtit">Inicio</a>
+        <br>
+        <a href="#capitulo-1" class="menu-subtit">Razones</a>
+        <br>
+        <a href="#capitulo-2" class="menu-subtit">Antes de la exposición</a>
+        <br>
+        <a href="#capitulo-3" class="menu-subtit">Exposición</a>
+        <br>
+        <a href="#capitulo-4" class="menu-subtit">Reconocimiento después de la exposición</a>
+        <br>
+    </div>
+    </div>
+    <div class="image-container">
+        <img src="img/Joaquín_Sorolla_y_Bastida_-_Capturing_the_moment_-_Google_Art_Project.jpg" class="full-width-image" alt="">
+        <div class="text-overlay text-end">
+            <h4 class="p_t mb-5">Instantánea <br> Biarritz</h4>
+        </div>
+    </div>
+    <!--ponerlo en el menu-->
+    <!--<div class="container-fluid">
+        <div class="row m-3">
+            <div class="col-lg-1 col-md-1"></div>
+            <div class="card mt-5 p-4 col-lg-10 col-md-10 col-sm-12 explicacion border-1 border-warning">
+                <h5 class="text-start fira-sans-light subcabecera">Bienvenido a la página dedicada al famoso cuadro de Joaquín Sorolla, "Instantánea en Biarritz". 
+                    Aquí encontrarás una recopilación detallada sobre esta obra, su contexto, y la interpretación que los expertos han dado a través de los años. 
+                    Toda la información que compartimos ha sido rigurosamente contrastada para ofrecerte una visión precisa y clara, aunque es posible que algunos 
+                    aspectos hayan sido adaptados o reinterpretados para facilitar su comprensión.
+                    <br>
+                    <br>
+                    Te invito a explorar cada sección con detenimiento, ya que he intentado presentar todos los detalles de forma accesible y comprensible. 
+                    Al final de la página, encontrarás un pequeño test que te invito a completar para poner a prueba lo que has aprendido. 
+                    ¡Estoy seguro de que disfrutarás del recorrido y descubrirás datos fascinantes sobre esta icónica pintura de Sorolla!</h5>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingRochefort">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRochefort" aria-expanded="false" aria-controls="collapseRochefort">
-                Henri Rochefort
-              </button>
-            </h2>
-            <div id="collapseRochefort" class="accordion-collapse collapse" aria-labelledby="headingRochefort" data-bs-parent="#sorollaAccordion">
-              <div class="accordion-body">
-                "Ha nacido un magnífico pintor... La pintura de este artista no tiene nada que ver con el impresionismo, pero es increíblemente impresionante."
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-    
-    <!--EXPLORA-->
-    <h1 class="titulo m-5 d-flex justify-content-between col-3" ><i>04</i>Explora</h1>
-    <section>
-      <div class="container grid-container mt-5 mb-5">
-        <!-- Primer ítem: ocupa 1 columna de ancho y 2 filas de alto -->
-        <div class="item tall"><img src="img/Clotilde con traje gris, 1900. Museo Sorolla.png" alt=""></div>
-        <!-- Segundo ítem: ocupa 2 columnas de ancho y 1 fila de alto -->
-        <div class="item wide2">Si lo que has visto hasta ahora te ha interesado, no te quedes con solo una parte de la historia. Inicia sesión y descubre más sobre los cuadros de Sorolla, los secretos detrás de sus pinceladas y el contexto que hizo únicas sus obras. Esto es solo un adelanto de todo lo que puedes aprender y disfrutar. Únete y sigue explorando el fascinante vida de Sorolla.</div>
-        <div class="item wide"><img src="img/Joaquín_Sorolla_y_Bastida_-_Capturing_the_moment_-_Google_Art_Project.jpg" alt=""></div>
-      </div>
-    </section>
-    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
-    <script src="/js/firebase.js" type="module"></script>
+    </div>-->
+    <!-- Intro -->
+    <div class=" mb-5" id ="inicio">
+        <div class="container-fluid">
+            <div class = "row">
+                <div class = "col-7">
+                    <h1 class="slide-top numero">1</h1>
+                    <h1 class="slide-top numero">9</h1>
+                    <h1 class="slide-top numero">0</h1>
+                    <h1 class="slide-top numero">6</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class = "text-end mt-3">
+                    <h1 class="titulo text-secondary">PRIMERA EXPOSICIÓN</h1>
+                    <h1 class="titulo text-secondary">DE <bg class="sorolla permanent-marker-regular">SOROLLA</bg> EN SOLITARIO</h1>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center align-item-center menu">
+                <div class="card text-bg-dark menu-item img-item rounded-pill" onclick="expandCard(this, 'capitulo-1')">
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="card-title display-6"><i class="bi bi-1-circle-fill"></i></h6>
+                    <h6 class="display-6 text d-none">Introducción</h6>
+                    </div>
+                </div>
+                <div class="card text-bg-dark menu-item img2-item rounded-pill" onclick="expandCard(this, 'capitulo-2')">
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="card-title display-6"><i class="bi bi-2-circle-fill"></i></h6>
+                    <h6 class="display-6 text d-none">Antes de la exposición</h6>
+                    </div>
+                </div>
+                <div class="card text-bg-dark menu-item rounded-pill" onclick="expandCard(this , 'capitulo-3')">
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="card-title display-6"><i class="bi bi-3-circle-fill"></i></h6>
+                    <h6 class="display-6 text d-none">Exposición</h6>
+                    </div>
+                </div>
+                <div class="card text-bg-dark menu-item rounded-pill" onclick="expandCard(this , 'capitulo-4')">
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="card-title display-6"><i class="bi bi-4-circle-fill"></i></h6>
+                    <h6 class="display-6 text d-none">Reconocimiento</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Capitulo 1 -->
+    <div id="capitulo-1" class = "capitulo1 mt-5">
+        <div class="container-fluid mt-5">
+            <br>
+            <h1 class="text-white text-center mt-5 cabecera">El exito no era algo nuevo para Sorolla</h1>
+            <h5 class="text-center fira-sans-light subcabecera">Pero su impulso definitivo provino de las magnificas críticas de estas obras</h5>
+            <div class="row d-flex justify-content-center align-item-center mt-3">
+                <div class="col-lg-5 col-md-8 col-sm-12">
+                    <div class="cuadro cuadro1">
+                        <div class="front rounded-4">
+                            <h1 class="fira-sans-semibold">Sol de la tarde <i class="bi bi-arrow-right-circle-fill"></i></h1>
+                        </div>
+                        <div class="back rounded-4 p-4">
+                            <h6 class="fira-sans-regular texto">La obra "Sol de la tarde", realizada en 1903, se encuentra en la colección de la Hispanic Society of America. En esta pintura, elementos 
+                                como el movimiento de las velas, la figura de los bueyes y la presencia de los pescadores sirven como excusa 
+                                para la verdadera obsesión de Sorolla: capturar la luz cambiante del Mediterráneo en distintas horas del día. El título revela el auténtico tema de la obra</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-8 col-sm-12 margen">
+                    <div class="cuadro cuadro2">
+                        <div class="front rounded-4">
+                            <h1 class="fira-sans-semibold">Verano <i class="bi bi-arrow-right-circle-fill"></i></h1>
+                        </div>
+                        <div class="back rounded-4 p-4">
+                            <h6 class="fira-sans-regular texto">La obra "Verano", realizada en 1904, ubicada en el Museo Nacional de Bellas Artes de Cuba, es un destacado ejemplo del luminismo de Joaquín Sorolla. 
+                                Representa una escena costera mediterránea llena de luz vibrante, donde bañistas y paisaje se funden
+                                 en una atmósfera cálida y dinámica. Con su pincelada suelta y tonos dorados y azulados, Sorolla captura la esencia del verano, elevando lo cotidiano a una expresión poética y envolvente.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 d-flex justify-content-center align-item-center">
+                <div class ="col-lg-4 col-sm-12 d-flex flex-column justify-content-center align-item-center">
+                    <h1 class="subtitulo text-start fira-sans-semibold">Que fueron presentadas fuera del concurso en el reenombrado Salón de Paris</h1>
+                    <img src="img/paris-salon.jpg" class="img-fluid img-custom mb-5" alt="Imagen de prueba">
+                </div>
+                <div class ="col-lg-6 col-sm-12 d-flex flex-column justify-content-center align-item-center">
+                    <h5 class="fira-sans-light subcabecera margen">Superando incluso el elogio obtenido años atrás por "Triste Herencia" o "Cosiendo la vela"</h5>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed a_titulo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Triste Herencia
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center align-item-center row">
+                              <img src="img/triste_herencia.jpg" class="acordeon mb-3" alt="">
+                              Triste herencia, (1899) es una de las obras más importantes de Joaquín Sorolla, inspirada en los niños enfermos del hospital de San Juan de Dios bañándose en el mar bajo la vigilancia de un fraile. 
+                              Sorolla confesó en 1909 que sufrió profundamente al pintarla y prometió no abordar un tema similar nuevamente.
+                              Aunque estuvo a punto de abandonar la obra, el apoyo de amigos como Vicente Blasco Ibáñez lo impulsó a continuar.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed a_titulo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Cosiendo la vela
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body d-flex justify-content-center align-item-center row">
+                                <img src="img/cosiendo_la_vela.jpg" class="acordeon mb-3" alt="">
+                                Joaquín Sorolla (1863–1923) fue clave en la modernización del arte español. Aunque en España su obra Cosiendo la vela no fue bien recibida, obtuvo reconocimiento internacional al ser premiada en Múnich en 1897. Influido por el naturalismo y la modernidad que descubrió en París, 
+                                Sorolla desarrolló un estilo intuitivo y vibrante, centrado en la luz y el color, alejándose de los impresionistas en su enfoque emocional.Cosiendo la vela es un ejemplo de su habilidad para capturar escenas cotidianas con naturalidad y luminosidad, reflejando su compromiso por mostrar
+                                 la vida y las costumbres de su tierra.
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Capitulo 2-->
+    <div id="capitulo-2" class="capitulo2">
+        <div class="container-fluid ">
+            <br>
+            <h1 class="ind m-5 d-flex justify-content-between col-5" ><i>02</i>Antes de la exposición</h1>
+            <h1 class="text-white text-center fira-sans-semibold cabecera">Sorolla sabía que esta oportunidad no solo era un reconocimiento a su arte, sino también el comienzo de una etapa crucial en su carrera.</h1>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <h4 class=" text-center fira-sans-light subcabecera">La exposición se realizó en la Galeria Georges Petit</h4>
+                    <img src="img/galeria_petit.jpg" class="img-fluid" alt="Imagen de prueba">
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="cuadro cuadro3 margen">
+                        <div class="front rounded-4">
+                            <h1 class="fira-sans-semibold">Georges Petit <i class="bi bi-arrow-right-circle-fill"></i></h1>
+                        </div>
+                        <div class="back rounded-4 p-4">
+                            <h6 class="fira-sans-regular texto">Georges Petit fue un destacado comerciante de arte francés, figura clave en la promoción de artistas impresionistas como Renoir, Monet y Rodin. 
+                                Heredó en 1877 la galería fundada por su padre, François Petit, en París, convirtiéndola en una de las más influyentes del mercado francés. 
+                                Era conocido por su ambición competitiva y por maximizar las ventas, especialmente a compradores estadounidenses, como señaló Émile Zola. 
+                                </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-2 d-flex justify-content-center align-items-center">
+                <div class=" col-lg-5 col-md-6 col-sm-12">
+                    <h6 class="subtitulo text-start fira-sans-semibold">  Sorolla no ocultaba su desconfianza hacia los marchantes de arte</h6>
+                    <div class="card text-bg-dark carta p-3">
+                        <p class="card-text">
+                            Querido Pedro Gil,
+                            Te escribo con toda sinceridad. No puedo evitar sentir un miedo cerval ante esta exposición. ¿Y si no resulta tan exitosa como la imagino? 
+                            Cada detalle me inquieta, y Georges Petit, con su aire de "lagarto", no ayuda a calmarme.
+                            Aun así, confío en que todo saldrá bien.
+                            <br> A pesar de mis recelos, estoy dispuesto a enfrentar este nuevo reto con la misma pasión que pongo en cada pincelada.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="cuadro cuadro4 margen">
+                        <div class="front rounded-4">
+                            <h1 class="fira-sans-semibold">Pedro Gil <i class="bi bi-arrow-right-circle-fill"></i></h1>
+                        </div>
+                        <div class="back rounded-4 p-4">
+                            <h6 class="fira-sans-regular texto">Ambos se conocieron a la llegada del pintor a Roma y se convirtieron en inseparables.Pedro Gil invitó
+                                a Sorolla a su primer viaje en Paris, donde pudo descubrir la pintura moderna, el realismo de Bastien-Lepage y Adolph Menzel que marcaría 
+                                para siempre su pintura.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3 margen d-flex justify-content-center align-items-center">
+                <div class="card col-lg-7 col-sm-12 card_expo">
+                    <div class="card-body">
+                      <h1 class="card-title fira-sans-semibold cabecera">Comienzo de la exposición</h1>
+                      <p class="card-text">A pesar de cobrarse entrada, una gran multitud se congregó en la inauguración de la exposición de Sorolla en la Galería Georges Petit, 
+                        en la rue de Sèze, París. Entre los asistentes se encontraban figuras del arte como el célebre escultor Auguste Rodin, el influyente pintor impresionista Claude Monet y el reconocido retratista Carolus-Duran
+                        , lo que reflejaba el creciente reconocimiento de Sorolla.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 margen">
+                    <div class="d-flex justify-content-center align-item-center margen">
+                        <div class="d-flex flex-column justify-content-center align-item-center">
+                        <img src="img/auguste-rodin.jpg"  class="border border-3 rounded-pill artes me-2" alt="">
+                        <p class="text-center fira-sans-bold nombre_fotos text-white">Aguste Rodin</p>
+                        </div>
+                        <div  class="d-flex flex-column justify-content-center align-item-center">
+                        <img src="img/monet.jpg" class="border border-3 rounded-pill artes" alt="">
+                        <p class=" text-center fira-sans-bold nombre_fotos text-white">Claude Monet</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <img src="img/Carolus-Duran.jpg" class="border border-3 rounded-pill artes" alt="">
+                            <p class="text-center fira-sans-bold nombre_fotos text-white">Carolus-Duran</p>
+                        </div>
+                    </div>         
+                </div>
+            </div>
+            <h1 class="mt-5 text-white text-start fira-sans-semibold cabecera">A pesar de sus dudas, Sorolla recibió una respuesta entusiasta del público, asegurando el éxito de su exposición y marcando un hito en su carrera.</h1>
+        </div>
+       <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 318"><path fill="#adccd2" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,101.3C480,107,600,181,720,218.7C840,256,960,256,1080,229.3C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>-->
+    </div>
+    <!--Capitulo 3-->
+    <div id="capitulo-3" class="mt-5">
+        <h5 class="c3_explicacion m-5">UNA SELECCIÓN DE LAS PIEZAS QUE FORMARON PARTE DE LA EXPOSICIÓN</h5>
+        <div class="container-fluid d-flex justify-content-center align-item-center">
+            <img src="img/EXPO1.jpg"  class="col-6 col-lg-5 col-md-5" alt="">
+            <img src="img/EXPO2.jpg" class="col-6 col-lg-5 col-md-5" alt="">
+        </div>
+        <p class="d-flex justify-content-center align-item-center mb-5">Fotografía de la exposición de Joaquín Sorolla en la Galería Georges Petit, 1906.</p>
+        <div class="container-fluid">
+            <div id="elenita" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">ELENITA EN EL PUPITRE</h3>
+                        <p>Elenita en su pupitre (1898) captura un tierno y silencioso momento de la infancia, donde su hija Elena, 
+                            absorta en su estudio, refleja la pureza y la dedicación del aprendizaje. El cuadro no solo muestra su 
+                            concentración, sino también el ambiente familiar lleno de amor y cuidado, donde la educación se valoraba 
+                            profundamente. La luz suave, tan característica de Sorolla, envuelve a Elena, resaltando la paz del momento 
+                            y la importancia que el pintor otorgaba a esos instantes de su vida familiar. Es una obra que no solo muestra 
+                            una escena cotidiana, sino un reflejo del cariño y la esperanza que definían su hogar.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="clotilde" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">CLOTILDE EN EL ESTUDIO</h3>
+                        <p>El cuadro muestra a la esposa de Joaquín Sorolla, Clotilde García del Castillo, relajada y sentada 
+                            en su estudio, leyendo un diario.
+                            La escena está ambientada en un espacio que refleja el entorno artístico del pintor, con caballetes,
+                            lienzos y una mesa con objetos relacionados con su trabajo.
+                            En la obra, destaca una maceta de azaleas en plena floración, que visualmente conecta con la figura
+                            de Clotilde, a quien el pintor le coloca una flor en el cabello.
+
+                            Este retrato no es un retrato convencional, ya que la figura de Clotilde ocupa un plano secundario, mientras que las azaleas son las protagonistas. 
+                            Sorolla eligió el estudio que tenía en el barrio bohemio de Chueca, en Madrid, como escenario de la obra. Clotilde en el estudio fue expuesta en 
+                            importantes muestras internacionales, como las de París (1906), Londres (1908) y Chicago (1911), bajo diferentes títulos, 
+                            lo que sugiere que Sorolla jugó con las interpretaciones de la obra, alternando entre un retrato de su esposa y una representación más centrada en la belleza de las azaleas.</p>
+                     </div>
+                </div>
+            </div>
+            <div id="nadadores" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">NADADORES, JÁVEA</h3>
+                        <p>"Jávea sublime, inmensa, lo mejor que conozco para pintar. Supera a todo." - Joaquín Sorolla
+                        Es una de las obras más representativas de Joaquín Sorolla, donde captura la belleza del mar 
+                        Mediterráneo y la luz vibrante de Jávea, un lugar que él consideraba inigualable para pintar. 
+                        La escena muestra a jóvenes sumergidos en aguas cristalinas, con sus cuerpos parcialmente 
+                        visibles bajo la superficie. Sorolla juega magistralmente con los reflejos, la refracción y 
+                        la transparencia del agua, creando un mosaico dinámico de colores y formas en constante movimiento. 
+                        A través de pinceladas rápidas y sueltas, logra transmitir la sensación de frescura, fluidez y vida 
+                        que caracteriza sus escenas marítimas.
+
+                        El agua en la obra de Sorolla no es solo un fondo, sino un elemento esencial que le permite 
+                        experimentar con la luz y el color. En Nadadores, Jávea, el mar refleja el cielo y el entorno, 
+                        integrando la naturaleza con las figuras humanas en una composición armoniosa y llena de energía.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="cordeleros" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">CORDELEROS DE JÁVEA</h3>
+                      <p> Es una obra en la que Joaquín Sorolla retrata la vida cotidiana de los trabajadores del mar. 
+                        En la escena, un grupo de pescadores elabora cuerdas en la playa, una labor tradicional que 
+                        formaba parte del día a día de las comunidades costeras. La composición destaca por su profundidad
+                         y perspectiva, con figuras distribuidas en diagonal, lo que aporta dinamismo y guía la mirada del 
+                         espectador a través de la escena. Sorolla emplea una paleta luminosa, dominada por tonos cálidos y 
+                         dorados que reflejan la intensidad del sol mediterráneo, contrastando con las sombras alargadas 
+                         que refuerzan el sentido de realismo y la atmósfera del momento. 
+                         Cordeleros de Jávea no solo documenta una tradición en desaparición, sino que también refleja 
+                         el compromiso del artista con el realismo social, dignificando el esfuerzo humano dentro del 
+                         paisaje mediterráneo que tanto amaba.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="joaquin" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">JOAQUIN CON EL PERRO</h3>
+                        <p>En 1906, Joaquín Sorolla retrató a su hijo, Joaquín Sorolla García, junto a su fiel perro Canelo, 
+                          en una obra que destaca por el uso de tonos oscuros, contrastando con la luminosidad característica 
+                          de su pintura. 
+                          Esta paleta, influenciada por la tradición pictórica española y artistas como Velázquez y Goya, 
+                          aporta profundidad y elegancia a la composición.
+                          Aunque no era especialmente aficionado a los perros, Sorolla inmortalizó a Canelo en este retrato, 
+                          reflejando su importancia dentro del hogar. Probablemente un Jack Russell Terrier, el pequeño can 
+                          fue un compañero inseparable de los hijos del pintor, quedando plasmado en la historia familiar a 
+                          través del arte.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="pino" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">PINE TREES</h3>
+                        <p>Es una obra de Joaquín Sorolla que refleja su maestría en la captura de la luz y la naturaleza. Pintado en 1902, este cuadro 
+                        muestra un paisaje lleno de vida, con pinos bañados por la intensa luz del sol mediterráneo. La pincelada suelta y vibrante 
+                        de Sorolla resalta la atmósfera luminosa, creando un juego de luces y sombras que dota de profundidad a la escena.
+
+                        La obra es un ejemplo de su estilo impresionista, donde la naturaleza es retratada con frescura y movimiento. Sorolla tenía 
+                        una profunda admiración por la costa mediterránea y sus paisajes, y en Pine Trees logra transmitir la tranquilidad y la 
+                        belleza de estos espacios al aire libre.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="hijos" class="collapse">
+                <div class="card card-custom mb-5">
+                    <div class="card-body">
+                        <h3 class="c3_tit">MIS HIJOS</h3>
+                      <p>El retrato familiar de Joaquín Sorolla, expuesto en varias galerías internacionales, refleja su intención de trascender el 
+                        ámbito privado y utilizar la obra como una herramienta para captar nuevos clientes. En él, se representa a sus tres hijos 
+                        en el estudio de su primera casa en Madrid: Joaquín posando de pie, María y Elena, están sentadas. María, la mayor de las tres, 
+                        aparece a la izquierda, y Elena, la hija más pequeña, se encuentra a la derecha. 
+                        <br>
+                        El retrato presenta influencias claras de Las Meninas de Velázquez, tanto en la disposición del grupo como en la presencia de un lienzo vacío, 
+                        lo que introduce un juego conceptual entre el espectador, el pintor y el cuadro. También se encuentra relacionado con el retrato 
+                        <b>Las hijas de Edward D. Boit de John Singer Sargent</b>, expuesto en 1883, sugiriendo una conexión con el entorno artístico de la época. 
+                        Sorolla aprovecha el retrato familiar para profundizar en su exploración de la interacción entre la realidad sensible y la representación pictórica.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pinterest-grid">
+                <div class="item">
+                  <img src="img/clotilde_en_el_estudio.jpg" alt="Imagen 1">
+                  <div class="desc">
+                    <h3 class="c3_tit">CLOTILDE EN EL ESTUDIO</h3>
+                    <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#clotilde" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="img/Nadadores,_Jávea.jpg" alt="Imagen 2">
+                  <div class="desc">
+                    <h3 class="c3_tit">NADADORES, JÁVEA</h3>
+                    <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#nadadores" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="img/pine-trees-1902.jpg" alt="Imagen 3">
+                  <div class="desc">
+                    <h3 class="c3_tit">PINE TREES</h3>
+                    <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#pino" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                    <img src="img/mis_hijos.jpg" alt="Imagen 3">
+                    <div class="desc">
+                      <h3 class="c3_tit">MIS HIJOS</h3>
+                      <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#hijos" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/joaquin_con_el_perro.jpg" alt="Imagen 3">
+                    <div class="desc">
+                      <h3 class="c3_tit">JOAQUIN CON EL PERRO</h3>
+                      <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#joaquin" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/cordeleros_de_Jávea-1898.jpg" alt="Imagen 3">
+                    <div class="desc">
+                      <h3 class="c3_tit">CORDELEROS DE JÁVEA</h3>
+                      <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#cordeleros" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/elenita_en_el_pupitre.jpg" alt="Imagen 3">
+                    <div class="desc">
+                      <h3 class="c3_tit">ELENITA EN EL PUPITRE</h3>
+                      <div class="text-end"> 
+                        <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#elenita" onclick="scrollToContent()">
+                        Ver más
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+     <!--Capitulo 4-->
+     <div id="capitulo-4" class="capitulo4">
+        <h3 class="cap4-titulo">RECONOCIMIENTO</h3>
+        <div class="carousel-wrapper">
+                <div class="carousel">
+                    <div class="card-reco">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3 class="card-title">Sorolla, honrado por Francia</h3>
+                                <p class="card-description">El gobierno francés, impresionado por la magnitud de la exposición y el talento del pintor, le otorgó la Medalla de la Orden de la Legión de Honor, consolidando aún más su posición en el firmamento artístico internacional.</p>
+                            </div>
+                            <img class="card-image" src="img/medalla.png" alt="Imagen de la carta">
+                        </div>
+                    </div>
+                    <div class="card-reco">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3 class="card-title">Camille Mauclair</h3>
+                                <p class="card-description">El reconocido poeta y crítico, destacó el impacto de la exposición de Sorolla en su carrera, resumiéndolo en su crítica para el Mercure de France con estas palabras:
+                                "Parece que se haya revelado como triunfador quien hasta entonces era un desconocido, tan grande fue el contraste entre su honorable rango de pintor extranjero, fuera de concurso y decorado, 
+                                y la gloria que le sobrevino desde el primer día de la exposición en la Galería Petit."</p>
+                            </div>
+                            <img class="card-image" src="img/Camille-Mauclair.jpg" alt="Imagen de la carta">
+                        </div>
+                    </div>
+                    <div class="card-reco">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3 class="card-title">Bernardino de Pantorba</h3>
+                                <p class="card-description">El biógrafo de Sorolla escribió :"Llevados a Francia, la tierra de los impresionistas; puestos allí, a dos pasos de las salas parisinas donde veinte, treinta años antes, los audaces impresionistas provocaban violentas reacciones, y en la burguesía del arte irreprimibles cóleras, los lienzos no menos audaces del valenciano exhibían algo grande que, para numerosos contempladores, resultaba, además, insólito: una ruta distinta dentro del impresionismo europeo a la seguida por los impresionistas franceses."</p>
+                            </div>
+                            <img class="card-image" src="img/Bernardino_de_pantorba.jpg" alt="Imagen de la carta">
+                        </div>
+                    </div>
+                    <div class="card-reco">
+                        <div class="card-content">
+                            <div class="card-text">
+                                <h3 class="card-title">Henri Rochefort</h3>
+                                <p class="card-description">El político, escritor y marqués, quien había sido retratado años antes por Manet, también dejó constancia de su admiración por Sorolla:
+
+                                    "Ha nacido un magnífico pintor. Desgraciadamente, no ha sido en Francia. No conozco pincel que contenga tanto sol. La pintura de este artista no tiene nada que ver con el impresionismo, pero es increíblemente impresionante."</p>
+                            </div>
+                            <img class="card-image" src="img/henri-rochefort.jpg" alt="Imagen de la carta">
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="btn prev"><i class="bi bi-arrow-left-circle"></i></button>
+                    <button class="btn next"><i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+                <div class="indicators"></div>
+        </div>
+    </div>
+     <!--Capitulo 5-->
+     <div id="capitulo-5" class="capitulo5">
+        <div class="container-fluid">
+
+        </div>
+       
+    </div>
+     <!--Obra 1-->
+     <div id="capitulo-5" class="obra1">
+        <div class="container-fluid">
+
+        </div>
+       
+    </div>
+    <script src="/public/js/script.js"></script>
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        /*capitulo 3*/
+        document.getElementById("elenita").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("clotilde").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("nadadores").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("pino").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("joaquin").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("cordeleros").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("hijos").addEventListener("shown.bs.collapse", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        /*capitulo 4*/
+        const carousel = document.querySelector(".carousel");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const indicatorsContainer = document.querySelector(".indicators");
+        const cards = document.querySelectorAll(".card-reco");
+
+        let index = 0;
+
+        // Crear indicadores de posición
+        cards.forEach((_, i) => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            indicatorsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function updateCarousel() {
+        // Obtenemos el ancho de las tarjetas
+        const cardWidth = cards[0].offsetWidth;
+
+        // Obtenemos el margen entre las cartas (puede ser diferente en cada dispositivo)
+        const cardStyle = getComputedStyle(cards[0]);
+        const cardMargin = parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+
+        // Calculamos el desplazamiento teniendo en cuenta el margen entre las cartas
+        const totalCardWidth = cardWidth + cardMargin; // Solo sumamos el margen total
+
+        // Actualizamos la posición del carrusel
+        carousel.style.transform = `translateX(-${index * totalCardWidth}px)`;
+
+        // Actualizamos los indicadores
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (index < cards.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (index > 0) {
+                index--;
+            } else {
+                index = cards.length - 1;
+            }
+            updateCarousel();
+        });
+
+    </script>
 </body>
 </html>

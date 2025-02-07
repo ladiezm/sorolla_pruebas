@@ -82,8 +82,18 @@ nav{
     grid-column: span 2; /* Dos columnas de ancho */
     grid-row: span 3;    /* Una fila de alto */
   }
+  @media (max-width: 1440px) {
+    .titulo{
+      width: 20% !important; 
+    }
+  }
+  @media (max-width: 769px) {
+    .titulo{
+      width: 40% !important; 
+    }
+  }
   /* Media query para pantallas pequeñas */
-@media (max-width: 426px) {
+  @media (max-width: 428px) {
     .grid-container {
       grid-template-columns: 1fr; /* Una sola columna */
       grid-auto-rows: auto; /* Altura automática */
@@ -112,9 +122,7 @@ nav{
       grid-row: span 1;    /* Una fila de alto */
     }
     .titulo{
-      font-family: "Safira",sans-serif;
-      color: #2a3d74;
-      font-size: 25pt;
+      font-size: 30pt !important;
     }
     .fondo {
       width: 100vw; /* Ocupa todo el ancho de la pantalla */
@@ -128,7 +136,16 @@ nav{
       margin: 10%;
     }
   }
-
+@media (max-width: 376px) {
+  .titulo{
+    width: 60% !important; 
+  }
+}
+@media (max-width: 321px) {
+  .titulo{
+    width: 70% !important; 
+  }
+}
 @font-face {
   font-family: "Safira";
   src: url("../fonts/Safira March Personal Use Only.ttf");
@@ -139,6 +156,10 @@ nav{
   font-family: "Safira",sans-serif;
   color: #2a3d74;
   font-size: 40pt;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px; /* Define un ancho máximo */
+  width: 30%; 
 }
 
 .permanent-marker-regular {
@@ -185,4 +206,14 @@ nav{
   align-items: center; /* Centra horizontalmente el contenido */
   color: white; /* Asegura que el texto sea legible */
 }
+.offcanvas-center {
+  width: 50%; /* Ajusta el tamaño según necesites */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-in-out;
+}
 
+.offcanvas-center.show {
+  transform: translate(-50%, -50%) scale(1);
+}
