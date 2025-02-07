@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="text-center">
+    <div class="container mt-5">
+        <h2>Escanea un Código QR</h2>
+        <div id="reader" style="width: 100%; max-width: 400px; margin: auto;"></div>
+        <p id="result"></p>
+        <button onclick="stopScanner()" class="btn btn-danger">Detener</button>
+        <a href="index.html" class="btn btn-secondary mt-3">Volver</a>
+    </div>
+
+    
+    <script>
+        let scanner = null;
+    
+        function startScanner() {
+            scanner = new Html5Qrcode("reader");
+    
+            scanner.start(
+                { facingMode: "environment" }, // Usa la cámara trasera
+                {
+                    fps: 10,    // Cuadros por segundo
+                    qrbox: 250, // Tamaño del área de escaneo
+                },
+                (decodedText) => {
+                    document.getElementById("result").innerText = "Código QR: " + decodedText;
+                    stopScanner(); // Detener después de leer un código
+                },
+                (error) => {
+                    console.log(error); // Errores de escaneo
+                }
+            ).catch((err) => {
+                console.error("Error al iniciar la cámara: ", err);
+            });
+        }
+    
+        function stopScanner() {
+            if (scanner) {
+                scanner.stop().then(() => {
+                    console.log("Escáner detenido");
+                }).catch((err) => {
+                    console.error("Error al detener el escáner: ", err);
+                });
+            }
+        }
+    </script>
+    
+</body>
+</html>

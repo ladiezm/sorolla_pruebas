@@ -1,4 +1,164 @@
-.card{
-    width: 34vh;
-    height: 50vh;
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
+}
+
+/*navbar*/
+.nav-logo{
+    color:#07517f;
+}
+.nav-logo:hover{
+    color:#ffffff;
+}
+
+ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.p_t{
+    position: relative;
+    color:white;
+    font-size: 50pt;
+}
+
+.menu-tit{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    font-family: 'Safira', sans-serif;
+    font-size: 45pt;
+}
+
+.menu-subtit{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    font-size: 35pt;
+}
+
+@media(max-width:1441px) and (min-width:1026px){
+    .p_t{
+        font-size: 50pt;
+    }
+    
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 15pt;
+    }
+    
+}
+
+@media(max-width:1026px) and (min-width:576px){
+    .p_t{
+        font-size: 50pt;
+    }
+    
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+    
+}
+@media(max-width:769px){
+    .text-overlay {
+        left: 60% !important;
+    }
+    .menu-tit{
+        font-size: 12pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+}
+@media(min-width: 376px) and (max-width: 576px){
+    .p_t{
+        font-size: 40pt;
+    }
+    
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 15pt;
+    }
+}
+@media (min-width: 321px) and (max-width: 376px) {
+
+    .p_t{
+        font-size: 40pt;
+    }
+    
+    .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 321px) {
+    .p_t{
+        font-size: 40pt;
+    }
+    .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+}
+.permanent-marker-regular {
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*cartas*/
+  .pinterest-grid {
+    column-count: 3;
+    column-gap: 1em;
+  }
+  .pinterest-grid .item {
+    background: #fff;
+    margin-bottom: 1em;
+    display: inline-block; /* Necesario para que se comporte bien en columnas */
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  .pinterest-grid .item img {
+    width: 100%;
+    display: block;
+  }
+  .pinterest-grid .item .desc {
+    padding: 10px;
+  }
+  /* Adaptabilidad: Ajuste de columnas en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .pinterest-grid {
+      column-count: 2;
+    }
+  }
+  .btn-custom {
+    background-color: #2a3d74;
+    color: white;
+    border: none; /* Sin borde */
+    border-radius: 0; /* Sin esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado */
+    transition: background-color 0.3s ease; /* Efecto suave */
+}
+
+.btn-custom:hover {
+    background-color: #2a3d74; /* Cambio de color al pasar el mouse */
+    color: white;
 }

@@ -21,6 +21,11 @@ body {
 .bg-offcanvas{
     background: rgba(251, 252, 252, 0.4);
 }
+ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
 
 .p_t{
     position: relative;
@@ -33,14 +38,14 @@ body {
     color:white;
     text-decoration: none;
     font-family: 'Safira', sans-serif;
-    font-size: 50pt;
+    font-size: 45pt;
 }
 
 .menu-subtit{
     position: relative;
     color:white;
     text-decoration: none;
-    font-size: 50pt;
+    font-size: 35pt;
 }
 
 .image-container {
@@ -68,20 +73,42 @@ body {
     font-family: "Arial", sans-serif;
     z-index: 2;   /* Asegura que el texto esté por encima de la imagen */
 }
-
-@media(max-width:1024px) and (min-width:576px){
+@media(max-width:1441px) and (min-width:1026px){
     .p_t{
         font-size: 50pt;
     }
     
     .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 15pt;
+    }
+    
+}
+
+@media(max-width:1026px) and (min-width:576px){
+    .p_t{
         font-size: 50pt;
+    }
+    
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
     }
     
 }
 @media(max-width:769px){
     .text-overlay {
         left: 60% !important;
+    }
+    .menu-tit{
+        font-size: 12pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
     }
 }
 @media(min-width: 376px) and (max-width: 576px){
@@ -106,6 +133,9 @@ body {
     }
     
     .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
         font-size: 10pt;
     }
     .image-container {
@@ -128,6 +158,9 @@ body {
         font-size: 40pt;
     }
     .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
         font-size: 10pt;
     }
     .image-container {
