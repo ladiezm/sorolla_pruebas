@@ -1,9 +1,40 @@
 #logo{
     width: 50%;
 }
+.tit_nav {
+  background: linear-gradient(to bottom, rgba(167, 166, 166, 0.4), rgba(255, 255, 255, 0));
+}
 
-nav{
-    background-color: #2a3d74;
+.nav-logo{
+  color:#07517f;
+}
+.nav-logo:hover{
+  color:#ffffff;
+}
+.link{
+  color: #07517f !important;
+}
+.nav-inicio {
+  color: #07517f;
+  border: 1px solid #07517f; /* Definir el tipo de borde */
+}
+.nav-menu{
+  color:#07517f;
+  font-size:20pt;
+}
+
+.nav-inicio:hover {
+  color: #fcfdfd;
+  border: 1px solid #f8f9f9; /* Definir el tipo de borde */
+}
+
+@media(max-width:321px){
+  .ini{
+    font-size: 1.5rem;
+  }
+}
+.bg-offcanvas{
+  background: rgba(251, 252, 252, 0.4);
 }
 
 /* Fondo del overlay (parte que oscurece el fondo) */
@@ -15,19 +46,6 @@ nav{
 .modal-content {
     background-color:  rgba(42, 61, 116,0.8);
     color:white;
-}
-
-.sticky {
-    position: sticky;
-    top: 0; /* Para el primero */
-    z-index: 10;
-}
-
-.sticky-2 {
-    position: sticky;
-    top: 50px; /* Para el segundo, debajo del primero */
-    background-color: #ffffff;
-    z-index: 9; /* Menor z-index para estar debajo si es necesario */
 }
 
 #menu{
@@ -82,18 +100,30 @@ nav{
     grid-column: span 2; /* Dos columnas de ancho */
     grid-row: span 3;    /* Una fila de alto */
   }
-  @media (max-width: 1440px) {
+  @media (max-width: 2561px) {
     .titulo{
-      width: 20% !important; 
+      width: 17% !important; 
+      font-size: 55pt !important;
+    }
+  }
+  @media (max-width: 1441px) {
+    .titulo{
+      width: 25% !important; 
+      font-size: 45pt !important;
+    }
+  }
+  @media (max-width: 1025px) {
+    .titulo{
+      width: 28% !important; 
     }
   }
   @media (max-width: 769px) {
     .titulo{
-      width: 40% !important; 
+      width: 38% !important; 
     }
   }
   /* Media query para pantallas pequeñas */
-  @media (max-width: 428px) {
+  @media (max-width: 426px) {
     .grid-container {
       grid-template-columns: 1fr; /* Una sola columna */
       grid-auto-rows: auto; /* Altura automática */
@@ -122,7 +152,8 @@ nav{
       grid-row: span 1;    /* Una fila de alto */
     }
     .titulo{
-      font-size: 30pt !important;
+      width: 45% !important; 
+      font-size: 25pt !important;
     }
     .fondo {
       width: 100vw; /* Ocupa todo el ancho de la pantalla */
@@ -138,12 +169,14 @@ nav{
   }
 @media (max-width: 376px) {
   .titulo{
-    width: 60% !important; 
+    width: 50% !important; 
+    font-size: 25pt !important;
   }
 }
 @media (max-width: 321px) {
   .titulo{
-    width: 70% !important; 
+    width: 58% !important; 
+    font-size: 25pt !important;
   }
 }
 @font-face {

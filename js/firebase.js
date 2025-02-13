@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup,createUserWithEmailAndPassword, signInWithRedirect,getRedirectResult, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getFirestore, doc,getDoc, setDoc} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAuLI1Uc7oQJjc-cSD1fx0LdMnytzWjKAM",
@@ -19,49 +19,65 @@ const provider = new GoogleAuthProvider();
 // Inicializa Firestore
 const db = getFirestore();
 
-// Función para detectar si es un dispositivo móvil
 function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
+    // Esto verifica si el dispositivo es móvil basándose en el userAgent.
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-// Función para iniciar sesión con Google
 const loginWithGoogle = () => {
     if (isMobile()) {
-        // Si es un dispositivo móvil, usar redirección
+        // Iniciar redirección de Google
         signInWithRedirect(auth, provider);
-        // Llamar a esta función al cargar la página para manejar la redirección
-        handleRedirectResult();
-    } else {
-        // Si es escritorio, usar ventana emergente
-        signInWithPopup(auth, provider)
+        
+        // Manejar el resultado de la redirección
+        getRedirectResult(auth)
             .then((result) => {
-                // El usuario se autenticó con éxito
-                const user = result.user;
-                console.log("Usuario autenticado:", user);
-                // Guardar los datos del usuario en Firestore
-                saveUserToFirestore(user);
+                if (result) {
+                    const user = result.user;
+                    console.log("Usuario autenticado tras redirección:", user);
+                    // Verificar si el usuario ya está en Firestore
+                    checkAndSaveUserToFirestore(user); 
+                } else {
+                    console.log("No se obtuvo un resultado de redirección en móvil");
+                }
             })
             .catch((error) => {
-                // Manejo de errores
-                console.error("Error al iniciar sesión con Google:", error);
+                console.error("Error al manejar la redirección en móvil:", error);
+                alert("Error al manejar la redirección: " + error.message);
+            });
+    } else {
+        // Para escritorio, usamos el popup
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                console.log("Usuario autenticado:", user);
+                // Verificar si el usuario ya está en Firestore
+                checkAndSaveUserToFirestore(user);
+            })
+            .catch((error) => {
+                console.error("Error al manejar el popup en escritorio:", error);
+                alert("Error al manejar la redirección: " + error.message);
             });
     }
 };
 
-// Manejar el resultado de la redirección (solo para dispositivos móviles)
-const handleRedirectResult = () => {
-    getRedirectResult(auth)
-        .then((result) => {
-            if (result) {
-                const user = result.user;
-                console.log("Usuario autenticado tras redirección:", user);
-                // Guardar los datos del usuario en Firestore
+// Verificar si el usuario ya está en Firestore y guardarlo si no existe
+const checkAndSaveUserToFirestore = (user) => {
+    const userRef = doc(db, "users", user.uid); // Referencia en la colección 'users'
+    
+    // Verificar si el usuario ya existe en Firestore
+    getDoc(userRef)
+        .then((docSnapshot) => {
+            if (!docSnapshot.exists()) {
+                // Si el usuario no existe en Firestore, lo guardamos
+                console.log("El usuario no existe en Firestore, guardando...");
                 saveUserToFirestore(user);
+            } else {
+                console.log("El usuario ya existe en Firestore");
             }
         })
         .catch((error) => {
-            // Manejo de errores
-            console.error("Error al manejar el resultado de la redirección:", error);
+            console.error("Error al verificar usuario en Firestore:", error);
         });
 };
 
@@ -72,6 +88,7 @@ const emailLogin = (email, password) => {
             // El usuario se autenticó con éxito
             const user = userCredential.user;
             console.log("Usuario autenticado:", user);
+            window.location.href = 'ind.html';
         })
         .catch((error) => {
             // Manejo de errores
@@ -84,30 +101,22 @@ const emailLogin = (email, password) => {
 
 // Función para registrar usuario con correo y contraseña
 const emailSignup = (email, password) => {
-    let reg = $("#registrado");
-    let inv = $("#invalido");
+    // Lógica de registro
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log("Usuario registrado:", user);
-            reg.hide();
-            inv.hide();
+            // Guardar en Firestore si el registro es exitoso
             saveUserToFirestore(user);
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.error("Error al registrar usuario:", errorCode, errorMessage);
-
-            if (errorCode === 'auth/email-already-in-use') {
-               reg.removeClass('d-none').show();
-            } else if (errorCode === 'auth/invalid-email') {
-               inv.removeClass('d-none').show();
-            } else {
-                alert("Error: " + errorMessage);
-            }
+            console.error("Error al registrar el usuario:", errorCode, errorMessage);
+            alert("Error al registrar el usuario: " + errorMessage);  // Muestra un mensaje de error
         });
 };
+
 
 const saveUserToFirestore = (user) => {
     const userRef = doc(db, "users", user.uid); // Referencia en la colección 'users'
@@ -126,7 +135,7 @@ const saveUserToFirestore = (user) => {
     })
     .then(() => {
         console.log("Usuario guardado en Firestore con UID:", user.uid);
-        window.location.href = '/menu';
+        window.location.href = 'ind.html';
     })
     .catch((error) => {
         console.error("Error al guardar usuario en Firestore:", error);
@@ -191,3 +200,4 @@ $("#password_reg").on("input",function(){
         especial.hide();
     }
 });
+

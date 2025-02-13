@@ -162,3 +162,57 @@ ul{
     background-color: #2a3d74; /* Cambio de color al pasar el mouse */
     color: white;
 }
+
+/* Fondo del overlay (parte que oscurece el fondo) */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.1);  /* Cambia el valor del último parámetro para controlar la transparencia */
+}
+
+/* Fondo del modal (contenido del modal) */
+.modal-content {
+    background-color:  rgba(42, 61, 116,0.8);
+    color:white;
+}
+@font-face {
+    font-family: "Safira";
+    src: url("/fonts/Safira March Personal Use Only.ttf");
+}
+@font-face {
+    font-family: "Lulo";
+    src: url("/fonts/Lulo-Clean-W01-One-Bold.ttf");
+}
+
+.c3_explicacion{
+    font-family: "Safira",sans-serif;
+    color: #2a3d74;
+    font-size: 25pt;
+    letter-spacing: 0.35em;
+    text-align: center;
+}
+
+.c3_tit{
+    font-family: "Lulo",sans-serif;
+    font-size: 20pt;
+}
+@media (max-width: 428px) {
+    .c3_tit{
+        font-size: 12pt !important;
+    }
+    .btn-custom {
+        padding: 5px 10px !important;
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 376px) {
+    .c3_tit{
+        font-size: 10pt !important;
+    }
+    .c3_explicacion{
+        font-size: 20pt !important;
+    }
+}
+@media (max-width: 321px) {
+    .c3_explicacion{
+        font-size: 17pt !important;
+    }
+}

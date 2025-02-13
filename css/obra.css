@@ -1,0 +1,72 @@
+.destino {
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    position: absolute; /* Se mantiene pero dentro del contenedor */
+    transition: opacity 1s ease-in-out;
+}
+/* Ocultar imágenes por defecto */
+.fade-img {
+    opacity: 0;
+}
+
+/* Solo la imagen activa será visible */
+.fade-img.active {
+    opacity: 1;
+    position: relative; /* Esto evita que se superponga a todo */
+}
+.container-fluid {
+    position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ajusta según tu diseño */
+    overflow: hidden; /* Evita que se salga del área */
+}
+
+@media(max-width:1025px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+    
+}
+
+@media(max-width:769px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+    
+}
+@media(max-width:426px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+    
+}
+
+@font-face {
+    font-family: "Lulo";
+    src: url("/fonts/Lulo-Clean-W01-One-Bold.ttf");
+}
+.letras{
+    font-family: "Lulo",sans-serif;
+    color: #2a3d74;
+    font-size: 2rem;
+}
+.letras2{
+    font-family: "Lulo",sans-serif;
+    color: #313131;
+    font-size: 2rem;
+}
+@font-face {
+    font-family: "Safira";
+    src: url("/fonts/Safira March Personal Use Only.ttf");
+}
+.def{
+    font-family: "Safira",sans-serif;
+    color: #060606;
+    font-size: 2rem; 
+}
