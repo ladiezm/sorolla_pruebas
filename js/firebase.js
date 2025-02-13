@@ -29,22 +29,25 @@ const loginWithGoogle = () => {
         // Iniciar redirección de Google
         signInWithRedirect(auth, provider);
         
-        // Manejar el resultado de la redirección
-        getRedirectResult(auth)
-            .then((result) => {
-                if (result) {
-                    const user = result.user;
-                    console.log("Usuario autenticado tras redirección:", user);
-                    // Verificar si el usuario ya está en Firestore
-                    checkAndSaveUserToFirestore(user); 
-                } else {
-                    console.log("No se obtuvo un resultado de redirección en móvil");
-                }
-            })
-            .catch((error) => {
-                console.error("Error al manejar la redirección en móvil:", error);
-                alert("Error al manejar la redirección: " + error.message);
-            });
+        // Asegurarse de que el resultado de la redirección se maneje
+        setTimeout(() => {
+            getRedirectResult(auth)
+                .then((result) => {
+                    if (result) {
+                        const user = result.user;
+                        console.log("Usuario autenticado tras redirección:", user);
+                        // Guardar el usuario en Firestore
+                        checkAndSaveUserToFirestore(user); 
+                    } else {
+                        console.log("No se obtuvo un resultado de redirección en móvil");
+                        alert("No se obtuvo un resultado de redirección. Intenta de nuevo.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error al manejar la redirección en móvil:", error);
+                    alert("Error al manejar la redirección: " + error.message);
+                });
+        }, 2000);  // Esperamos un poco más de tiempo antes de intentar obtener el resultado
     } else {
         // Para escritorio, usamos el popup
         signInWithPopup(auth, provider)
