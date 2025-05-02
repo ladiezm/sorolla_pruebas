@@ -1313,6 +1313,7 @@ display: block;
 /*----------------------------------------------------OBRA----------------------------------------------------------------*/
 .obra{
     background:#bac4c8;
+    padding: 2rem 0;
 }
 .fondo_texto{
     background-color: #e2e699;
@@ -1392,22 +1393,34 @@ display: block;
 }
 
 .container.cuadros {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.columna {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.cuadro_cara, .cuadro_vestido {
+    height: 500px;
 }
 
-/* Estilos para diferentes tamaños de cuadros */
-.cuadro_cara { height: 500px; }
-.cuadro_vestido { height: 500px; }
-.cuadro_detalles { height: 250px; }
-.cuadro_detalles2 { height: 250px; }
+.cuadro_detalles, .cuadro_detalles2 {
+    height: 250px;
+}
 
 /* Media queries simplificadas */
 @media (max-width: 768px) {
-    .container.cuadros {
-        grid-template-columns: 1fr;
+    .columna {
+        min-width: 100%;
     }
     
     .cuadro, .cuadro_cara, .cuadro_vestido {
@@ -1416,17 +1429,6 @@ display: block;
     
     .cuadro_detalles, .cuadro_detalles2 {
         height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .cuadro, .cuadro_cara, .cuadro_vestido {
-        height: 300px;
-    }
-    
-    .cuadro .front h1 {
-        bottom: 10px;
-        left: 10px;
     }
 }
 /*@media(max-width: 2560px) {
