@@ -1,0 +1,12 @@
+.fondoFooter{
+    background-color: #2a3d74;
+}
+.icono{
+    color:white
+}
+.icono:hover{
+    color:rgb(214, 214, 214)
+}
+footer {
+    margin-top: auto; 
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel con efecto barrido</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Efecto de barrido para imágenes panorámicas */
+        .carousel-pan {
+            overflow: hidden;
+            height: 60vh; /* Altura para móviles */
+        }
+        
+        .carousel-pan .carousel-inner {
+            height: 100%;
+        }
+        
+        .carousel-pan .carousel-item {
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-pan .carousel-item img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+            animation: pan-image 25s linear infinite;
+        }
+        
+        @keyframes pan-image {
+            0% { transform: translateX(0); }
+            15% { transform: translateX(0); } /* Pausa inicial */
+            85% { transform: translateX(calc(-100% + 100vw)); } /* Barrido completo */
+            100% { transform: translateX(calc(-100% + 100vw)); } /* Pausa final */
+        }
+        
+        /* Ajustes para desktop */
+        @media (min-width: 992px) {
+            .carousel-pan {
+                height: 80vh;
+            }
+            .carousel-pan .carousel-item img {
+                width: 100%;
+                height: auto;
+                animation: none;
+            }
+        }
+        
+        /* Controles más visibles */
+        .carousel-control-prev, 
+        .carousel-control-next {
+            width: 10%;
+            background-color: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div id="panCarousel" class="carousel carousel-pan slide" data-bs-ride="carousel" data-bs-interval="26000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://via.placeholder.com/2000x800/2a3d74/ffffff?text=Imagen+1" class="d-block" alt="Imagen panorámica 1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/2000x800/d32f2f/ffffff?text=Imagen+2" class="d-block" alt="Imagen panorámica 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/2000x800/388e3c/ffffff?text=Imagen+3" class="d-block" alt="Imagen panorámica 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#panCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#panCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Ajustar dinámicamente la animación según el tamaño de la imagen
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('panCarousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        
+        function adjustPanning() {
+            items.forEach(item => {
+                const img = item.querySelector('img');
+                if(window.innerWidth < 992) {
+                    // Calcular duración basada en relación de aspecto
+                    const imgWidth = img.naturalWidth || 2000;
+                    const imgHeight = img.naturalHeight || 800;
+                    const imgRatio = imgWidth / imgHeight;
+                    const screenRatio = window.innerWidth / window.innerHeight;
+                    
+                    // Ajustar duración para que el barrido sea visible
+                    const duration = Math.max(20, 10 * (imgRatio / screenRatio));
+                    img.style.animationDuration = `${duration}s`;
+                } else {
+                    img.style.animation = 'none';
+                }
+            });
+        }
+        
+        // Precargar imágenes y ajustar
+        const images = carousel.querySelectorAll('img');
+        let loaded = 0;
+        images.forEach(img => {
+            if(img.complete) {
+                loaded++;
+            } else {
+                img.onload = function() {
+                    if(++loaded === images.length) adjustPanning();
+                }
+            }
+        });
+        
+        if(loaded === images.length) adjustPanning();
+        window.addEventListener('resize', adjustPanning);
+        
+        // Reiniciar animación al cambiar slide
+        carousel.addEventListener('slid.bs.carousel', function() {
+            const activeImg = carousel.querySelector('.carousel-item.active img');
+            if(activeImg) {
+                activeImg.style.animation = 'none';
+                void activeImg.offsetWidth; // Trigger reflow
+                activeImg.style.animation = '';
+                adjustPanning();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

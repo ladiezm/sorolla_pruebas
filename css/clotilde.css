@@ -1,0 +1,1654 @@
+/*LETRAS*/
+@font-face {
+    font-family: "Safira";
+    src: url("../fonts/Safira March Personal Use Only.ttf");
+}
+@font-face {
+    font-family: "Lulo";
+    src: url("../fonts/Lulo-Clean-W01-One-Bold.ttf");
+}
+.permanent-marker-regular {
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.fira-sans-extralight {
+font-family: "Fira Sans", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+/*NAVBAR*/
+.nav-logo{
+    color:#07517f;
+}
+.nav-logo:hover{
+    color:#fbf31b;
+}
+.nav-menu{
+    color:#07517f;
+    font-size:20pt;
+}
+.navbar{
+    background: rgba(255, 255, 255, 0.242);
+}
+.bg-offcanvas{
+    background: rgba(251, 252, 252, 0.4);
+}
+
+ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.menu-tit{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    font-family: 'Safira', sans-serif;
+    font-size: 45pt;
+}
+
+.menu-subtit{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    font-size: 35pt;
+}
+
+@media(max-width:1441px) and (min-width:1026px){
+    
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 15pt;
+    }
+    
+}
+
+@media(max-width:1026px) and (min-width:576px){
+    .menu-tit{
+        font-size: 20pt;
+    }
+
+    .menu-subtit{
+        font-size: 10pt;
+    }
+    
+}
+@media(max-width:769px){
+    .menu-tit{
+        font-size: 12pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+}
+@media(min-width: 376px) and (max-width: 576px){
+    .menu-tit{
+        font-size: 20pt;
+    }
+    .menu-subtit{
+        font-size: 15pt;
+    }
+}
+@media (min-width: 321px) and (max-width: 376px) {
+    .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 321px) {
+    .menu-tit{
+        font-size: 15pt;
+    }
+    .menu-subtit{
+        font-size: 10pt;
+    }
+
+}
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+.portada {
+    height: 100vh;
+    width: 100%;
+    display: flex !important; /* Forzar que sea flexbox */
+}
+
+
+.imagen_p1{
+    height: 100vh;
+    width: 50%;
+    background-image: url("../img/clotilde_con_traje_gris/cara.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
+.imagenes{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #667980;
+}
+.imagen2_p1{
+    height: 70%;
+    width: 32%;
+    margin-bottom: 10%;
+}
+.texto_portada{
+    font-family: "Lulo",sans-serif;
+    font-size: 4rem;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    margin-left: 5%;
+}
+
+.portada2 {
+    height: 100vh;
+    width: 100%;
+    display: flex; /* Forzar que sea flexbox */
+}
+
+.imagen_p2{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/clotilde_con_traje_gris/cara.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
+
+.card-reco {
+    margin: 5%; /* Añade margen para separar las cartas */
+    flex: 0 0 auto; /* Evita que las cartas se redimensionen */
+    width: 70%; /* Cada carta ocupa todo el espacio disponible en el carrusel */
+    height: 85vh;
+    border-color: #2a3d74;
+    border-width: 10px;
+    border-style: solid;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.5s ease; /* Añade transición suave para el movimiento */
+    box-sizing: border-box;
+}
+
+.card-reco-medio{
+    margin-left: auto; 
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between; /* Coloca el título/texto a la izquierda y la imagen a la derecha */
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.card-text {
+    flex: 1;
+    padding-right: 5%; /* Espacio entre el texto y la imagen */
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-family: "Lulo",sans-serif;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 40%; /* Tamaño de la imagen */
+    height: 60%;
+}
+
+.card-description {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+@media ((max-width: 2561px) and (min-width: 1443px)){
+    .card-reco {
+        height: 90vh;
+    }
+
+    .card-title {
+        font-size: 3rem; /* Reduce el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 1.6rem; /* Reduce el tamaño de la descripción */
+    }
+    .texto_portada{
+        font-size: 6.5rem;
+    }
+}
+
+@media (max-width:1025px){
+    .card-reco {
+        height: 80vh;
+    }
+    .card-title {
+        font-size: 1.2rem; /* Reduce el tamaño del título */
+    }
+    .card-description {
+        font-size: 0.7rem; /* Reduce el tamaño de la descripción */
+    }
+    .texto_portada{
+        font-size: 3.2rem;
+    }
+}
+/* Media query para dispositivos pequeños */
+@media (max-width: 769px) {
+
+    .card-reco {
+        width: 87%; /* Se ajusta el tamaño de la carta para móviles */
+        height: 80vh;
+        border-width: 5px;
+    }
+
+    .card-title {
+        font-size: 1.3rem; /* Reduce el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.7rem; /* Reduce el tamaño de la descripción */
+    }
+
+    .card-image {
+        max-width: 40% !important; /* Ajusta el tamaño de la imagen en móviles */
+        max-height: 50% !important;
+    }
+    .imagen2_p1{
+        height: 60%;
+    }
+    .texto_portada{
+        font-size: 2.6rem;
+    }
+}
+@media (max-width: 767px) {
+    .card-reco {
+        width: 87%; /* Se ajusta el tamaño de la carta para móviles */
+        height: 95vh;
+        border-width: 5px;
+    }
+}
+@media (max-width: 575px) {
+    .d-none {
+        display: none !important;
+    }
+    .card-reco {
+        width: 90%; /* Las cartas ocupan el 100% del ancho */
+        height: 40vh;
+    }
+
+    .card-title {
+        font-size: 0.8rem; /* Reduce aún más el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.45rem; /* Ajusta la descripción para que se lea bien */
+    }
+
+    .card-image {
+        width: 50% !important; /* Reduce el tamaño de la imagen */
+        height: 50% !important;
+    }
+}
+@media (max-width: 321px) {
+    .card-title {
+        font-size: 0.7rem; /* Reduce aún más el tamaño del título */
+    }
+    .card-description {
+        font-size: 0.4rem; /* Ajusta la descripción para que se lea bien */
+    }
+    .texto_portada{
+        font-size: 2.22rem;
+    }
+}
+
+/*--------------------------------------CAPITULO 2-------------------------------------------*/
+
+.dudas_cap2 {
+    height: 100vh; /* Ocupa el 100% del alto de la ventana */
+    width: 100%; /* Ocupa el 100% del ancho */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que el desenfoque se salga del contenedor */
+}
+
+/* Pseudo-elemento para la imagen de fondo difuminada */
+.dudas_cap2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/clotilde_con_traje_gris/FRDJeUnXEAAvLJw.jpeg"); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    filter: blur(2px); /* Aplica el difuminado (ajusta el valor según sea necesario) */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+}
+
+.texto_cap2{
+    color: rgb(231, 229, 229);
+    width: 50%;
+    z-index: 1; 
+}
+
+@media (max-width: 769px) {
+    .texto_cap{
+        font-size: 1.8rem !important; 
+    }
+    .texto_cap1{
+        font-size: 1.8rem !important; 
+    }
+    .texto_cap2{
+        width: 70% !important;
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+}
+
+@media(max-width: 481px){
+    .texto_cap{
+        font-size: 1.5rem !important; 
+    }
+    .texto_cap1{
+        font-size: 1.5rem !important; 
+    }
+    .texto_cap2{
+        width: 80% !important;
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+}
+/*--------------------------------------CAPITULO 3-------------------------------------------*/
+@keyframes slide-top {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-top {
+    display: inline-block;
+    opacity: 0; /* Inicialmente oculto para la animación */
+}
+
+/* Agregar retraso a cada número para crear un efecto secuencial */
+.slide-top:nth-child(1) {
+    animation-delay: 0s; /* Sin retraso */
+}
+.slide-top:nth-child(2) {
+    animation-delay: 0.1s; /* Retraso para el segundo número */
+}
+.slide-top:nth-child(3) {
+    animation-delay: 0.2s; /* Retraso para el tercer número */
+}
+.slide-top:nth-child(4) {
+    animation-delay: 0.3s; /* Retraso para el cuarto número */
+}
+.slide-top.show {
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.numero{
+    font-family: 'Lulo', sans-serif;
+    color:#07517f;
+    font-size: 4rem;
+}
+
+.letras{
+    font-family: 'Lulo', sans-serif;
+    color:#07517f;
+    font-size: 2rem;
+}
+
+.imagen_parroquia{
+    height: 70%;
+    width: 100%;
+}
+
+.cont_1{
+    width: 40%;
+}
+
+.cont_2{
+    width: 60%;
+}
+
+.imagen_c{
+    height: 33%;
+    width: 33%;
+    position: relative;
+}
+
+.texto_c{
+    position: absolute;
+    top:80%;
+    left:10%;
+}
+
+.imagen_c2{
+    height: 100%;
+    width: 100%;
+}
+
+.texto_cap3{
+    font-family: "Safira",sans-serif;
+    font-size: 2rem;
+    color: #2a3d74;
+    text-align: center;
+    margin: 2%;
+}
+
+@media(max-width: 767px){
+    .separacion{
+        flex-direction: column;
+    }
+    .cont_1{
+        width: 90%;
+    }
+    .letras{
+        font-size: 1.5rem;
+    }
+    .numero{
+        font-size: 3rem;
+    }
+    .cont_2{
+        width: 100%; 
+    }
+    .texto_cap3{
+        font-size: 1.5rem !important;
+    }
+}
+
+@media(max-width: 376px){
+    .texto_cap3{
+        font-size: 1.3rem !important;
+    }
+    .letras{
+        font-size: 1.2rem;
+    }
+    .numero{
+        font-size: 2.8rem;
+    }
+}
+
+.botones{
+    z-index: 10;
+}
+
+.mapa{
+    height: 50vh;
+    width: 30%;
+    background-image: url("../img/clotilde_con_traje_gris/Doodle_Map_of_Italy_With_States_generated.jpg");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+}
+
+.venecia{
+    position: absolute;
+    left:30%;
+    top:25%;
+}
+
+.florencia{
+    position: absolute;
+    left:8%;
+    top:57%;
+}
+
+.asis{
+    position: absolute;
+    left:53%;
+    top:65%;
+}
+
+.img_fl1{
+    height: 28vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/florencia2.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_fl2{
+    height: 28vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/florencia3.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_vn1{
+    height: 28vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/venecia1.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_asis1{
+    height: 55vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/asis1.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_asis2{
+    height: 50vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/asis2.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_asis3{
+    height: 30vh;
+    width: 18vw;
+    background-image: url("../img/clotilde_con_traje_gris/contadina.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_fl3{
+    height: 58vh;
+    width: 17vw;
+    background-image: url("../img/clotilde_con_traje_gris/florencia1.jpg");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_vn2{
+    height: 28vh;
+    width: 19vw;
+    background-image: url("../img/clotilde_con_traje_gris/venecia2.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+
+.img_asis4{
+    height: 28vh;
+    width: 19vw;
+    background-image: url("../img/clotilde_con_traje_gris/asis4.png");
+    background-size: cover; /* Ajusta la imagen para que quepa completamente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    position: relative;
+    margin: 1%;
+}
+.texto_c2{
+    position: absolute;
+    top:90%;
+    left:10%;
+}
+.texto_c3{
+    position: absolute;
+    top:5%;
+    left:10%;
+    color: white;
+}
+@media(max-width: 767px){
+    .mapa{
+        width: 32% !important;
+    }
+    .venecia{
+        left:10%;
+        top:20%;
+    }
+    .florencia{
+        left:-15%;
+        top:57%;
+    }
+    .asis{
+        left:43%;
+        top:68%;
+    }
+    .img_fl1,.img_fl2,.img_vn1{
+        height: 20vh;
+        width: 27.5vw;
+    }
+    .img_fl3{
+        height: 58vh;
+        width: 28vw;
+    }
+    .img_vn2{
+        height: 25vh;
+        width: 28vw;
+    }
+    .img_asis4{
+        height: 25vh;
+        width: 28vw;
+    }
+    .img_asis3,.img_asis2,.img_asis1{
+        width: 27.5vw;
+    }
+    .texto_c{
+        top:60%;
+        left:5%;
+        font-size: 0.7rem;
+    }
+    .texto_c2{
+        top:88%;
+        left:10%;
+        font-size: 0.7rem;
+    }
+    .texto_c3{
+        top:5%;
+        left:10%;
+        font-size: 0.7rem;
+    }
+}
+@media(max-width: 425px){
+    .img_fl3{
+        height: 58vh;
+        width: 27vw;
+    }
+    .img_vn2{
+        height: 25vh;
+        width: 27vw;
+    }
+    .img_asis4{
+        height: 25vh;
+        width: 27vw;
+    }
+}
+
+@media(max-width: 376px){
+    .mapa{
+        width: 31% !important;
+    }
+    .venecia{
+        left:-10%;
+        top:20%;
+    }
+    .florencia{
+        left:-20%;
+        top:57%;
+    }
+}
+
+@media(max-width: 321px){
+    .venecia{
+        left:-10%;
+        top:20%;
+    }
+    .florencia{
+        left:-25%;
+        top:57%;
+    }
+    .img_vn2{
+        height: 25vh;
+        width: 26vw;
+    }
+    .img_asis4{
+        height: 25vh;
+        width: 26vw;
+    }
+}
+
+@media(max-width: 309px){
+    .img_vn2{
+        height: 25vh;
+        width: 23vw;
+    }
+    .img_asis4{
+        height: 25vh;
+        width: 23vw;
+    }
+}
+/*--------------------------------------CAPITULO 4-------------------------------------------*/
+.preocupaciones {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    background-image: url('../img/clotilde_con_traje_gris/fondo_preocupacion.jpg');
+    background-size: cover;  /* o 'contain' dependiendo de lo que necesites */
+    background-position: bottom; 
+}
+.madrid{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    background-image: url('../img/clotilde_con_traje_gris/vista-del-embarcadero-del-parque-del-retiro-1882-museo-sorolla.jpg');
+    background-size: cover;  /* o 'contain' dependiendo de lo que necesites */
+    background-position: bottom; 
+}
+.tit_pre {
+    font-family: 'Safira','sans-serif';
+    position: absolute; 
+    top: 20px;
+    left: 20px; 
+    margin: 0;
+    font-size: 2rem;
+    color: #2a3d74; 
+    z-index: 10; 
+}
+@media(min-width:1441px){
+    .card_reflexion {
+        width: 800px !important;
+        height: 900px !important;
+    }
+}
+@media((max-width:1441px)and (min-width:1025px)){
+    .card_reflexion {
+        width: 400px !important;
+        height: 470px !important;
+    }
+    .preocupaciones,.madrid{
+        height: 100vh;
+    }
+
+}
+@media (min-width:1023px){
+    .preocupaciones,.madrid{
+        background-position: 50% 40%; 
+    }
+    .card-deck {
+        left: 18% !important;
+    }
+}
+@media((max-width:769px) and (min-width:426px)){
+    .preocupaciones,.madrid {
+        background-position: 50% 55%; 
+    }
+    .card-deck {
+        left: 10% !important;
+    }
+    
+    
+}
+
+.card-deck {
+    position: relative;
+    perspective: 1200px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centrado horizontal */
+    display: flex;
+    justify-content: center; /* Centrado horizontal interno */
+    transform: translateY(-20%); /* Reemplaza bottom: 20% */
+    left: 0;
+    right: 0;
+    bottom: 15%;
+}
+
+.card_reflexion{
+    position: absolute;
+    width: 200px;
+    height: 270px;
+    transition: all 0.5s ease;
+    transform-origin: bottom center;
+    cursor: pointer;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    border-top: 10px solid #2a3d74;
+}
+
+.card-content_reflexion {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+
+.card-selected {
+    z-index: 10;
+    transform: scale(1.2) translateX(-50%) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card_reflexion:nth-child(1) {
+    transform: rotate(-30deg);
+    left: 50%;
+}
+.card_reflexion:nth-child(2) {
+    transform: rotate(-10deg);
+    left: 50%;
+}
+.card_reflexion:nth-child(3) {
+    transform: rotate(10deg);
+    left: 50%;
+}
+
+.card_reflexion::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.signature {
+    font-style: italic;
+    text-align: right;
+    margin-top: 3px;
+    color: #666;
+}
+/*--------------------------------------CAPITULO 5-------------------------------------------*/
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; /* Oculta las cartas que no están en pantalla */
+    margin: 0 auto; /* Centra el carrusel */
+}
+
+.carousel {
+    display: flex; /* Para que las cartas estén en línea */
+    transition: transform 0.5s ease; /* Transición suave para el desplazamiento */
+}
+
+.card-cartas {
+    margin-left: 2%; /* Añade margen para separar las cartas */
+    flex: 0 0 auto; /* Evita que las cartas se redimensionen */
+    width: 70%; /* Cada carta ocupa todo el espacio disponible en el carrusel */
+    height: 80vh;
+    background-color: #c5ba89;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.5s ease; /* Añade transición suave para el movimiento */
+    box-sizing: border-box;
+}
+
+.card-cartas-image {
+    width: 40%; /* Tamaño de la imagen */
+    height: 30%;
+}
+.card-cartas-image2 {
+    width: 35%; /* Tamaño de la imagen */
+    height: 27%;
+}
+
+.prev, .next {
+    font-size: 2rem; /* Aumenta el tamaño de la fuente */
+    padding: 15px 30px; /* Aumenta el padding para hacer los botones más grandes */
+    color: rgb(5, 5, 5); /* Color del texto */
+    border: none; /* Elimina el borde */
+    border-radius: 50%; /* Hace que los botones sean redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: black;
+}
+@media (max-width: 769px) {
+    .card-cartas{
+        height: 76vh !important;
+        width: 95% !important;
+    }
+    .card-cartas-image2 {
+        height: 22%;
+    }
+}
+
+/* Media query para pantallas muy pequeñas, como móviles en modo vertical */
+@media (max-width: 481px) {
+    .card-cartas{
+        height: 45vh !important;
+        width: 95% !important;
+    }
+}
+
+@media (max-width: 376px) {
+    .card-cartas{
+        height: 43vh !important;
+        width: 95% !important;
+    }
+}
+
+@media (max-width: 321px) {
+    .card-cartas{
+        height: 45vh !important;
+        width: 90% !important;
+    }
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between; /* Coloca el título/texto a la izquierda y la imagen a la derecha */
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.card-text {
+    flex: 1;
+    padding-right: 5%; /* Espacio entre el texto y la imagen */
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-family: "Lulo",sans-serif;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 40%; /* Tamaño de la imagen */
+    height: 60%;
+}
+
+.card-description {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+@media ((max-width: 2561px) and (min-width: 1443px)){
+    .card-reco {
+        height: 90vh;
+    }
+
+    .card-title {
+        font-size: 3rem; /* Reduce el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 1.6rem; /* Reduce el tamaño de la descripción */
+    }
+}
+
+@media (max-width:1025px){
+    .card-reco {
+        height: 80vh;
+    }
+    .card-title {
+        font-size: 1.2rem; /* Reduce el tamaño del título */
+    }
+    .card-description {
+        font-size: 0.7rem; /* Reduce el tamaño de la descripción */
+    }
+}
+/* Media query para dispositivos pequeños */
+@media (max-width: 769px) {
+
+    .card-reco {
+        width: 87%; /* Se ajusta el tamaño de la carta para móviles */
+        height: 80vh;
+        border-width: 5px;
+    }
+
+    .card-title {
+        font-size: 1.3rem; /* Reduce el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.7rem; /* Reduce el tamaño de la descripción */
+    }
+
+    .card-image {
+        max-width: 40% !important; /* Ajusta el tamaño de la imagen en móviles */
+        max-height: 50% !important;
+    }
+    .imagen2_p1{
+        height: 60%;
+    }
+}
+
+/* Media query para pantallas muy pequeñas, como móviles en modo vertical */
+@media (max-width: 481px) {
+    .d-none {
+        display: none !important;
+    }
+
+    .card-reco {
+        width: 90%; /* Las cartas ocupan el 100% del ancho */
+        height: 50vh;
+    }
+
+    .card-title {
+        font-size: 0.8rem; /* Reduce aún más el tamaño del título */
+    }
+
+    .card-description {
+        font-size: 0.45rem; /* Ajusta la descripción para que se lea bien */
+    }
+
+    .card-image {
+        width: 50% !important; /* Reduce el tamaño de la imagen */
+        height: 50% !important;
+    }
+}
+@media (max-width: 321px) {
+    .card-title {
+        font-size: 0.7rem; /* Reduce aún más el tamaño del título */
+    }
+    .card-description {
+        font-size: 0.4rem; /* Ajusta la descripción para que se lea bien */
+    }
+}
+/*--------------------------------------CAPITULO 6-------------------------------------------*/
+.c3_explicacion{
+    font-family: "Safira",sans-serif;
+    color: #2a3d74;
+    font-size: 25pt;
+    letter-spacing: 0.35em;
+    text-align: center;
+}
+
+.c3_subt{
+    font-family: "Safira",sans-serif;
+    color: #2a3d74;
+    font-size: 11pt;
+    letter-spacing: 0.35em;
+    text-align: center;
+}
+
+.c3_tit{
+    font-family: "Lulo",sans-serif;
+    font-size: 20pt;
+}
+
+@media (max-width: 428px) {
+    .c3_tit{
+        font-size: 12pt !important;
+    }
+    .btn-custom {
+        padding: 5px 10px !important;
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 376px) {
+    .c3_tit{
+        font-size: 10pt !important;
+    }
+    .c3_explicacion{
+        font-size: 20pt !important;
+    }
+}
+@media (max-width: 321px) {
+    .c3_explicacion{
+        font-size: 17pt !important;
+    }
+}
+
+.card-custom {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: none; /* Sin borde */
+    border-radius: 0; /* Sin esquinas redondeadas */
+    background-color: white; /* Fondo */
+    padding: 20px; /* Espaciado interno opcional */
+}
+
+.btn-custom {
+    background-color: #2a3d74; /* Gris oscuro */
+    color: white; /* Texto negro */
+    border: none; /* Sin borde */
+    border-radius: 0; /* Sin esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado */
+    transition: background-color 0.3s ease; /* Efecto suave */
+}
+
+.btn-custom:hover {
+    background-color: #2a3d74; /* Cambio de color al pasar el mouse */
+    color: white;
+}
+
+.text-end {
+    text-align: right; /* Alinea el botón a la derecha */
+}
+@media(max-width:426px){
+    .letras_texto{
+        font-size:0.7rem;
+    }
+}
+
+/* Grid estilo Pinterest usando columnas */
+.pinterest-grid {
+column-count: 3;
+column-gap: 1em;
+}
+.pinterest-grid .item {
+background: #fff;
+margin-bottom: 1em;
+display: inline-block; /* Necesario para que se comporte bien en columnas */
+width: 100%;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.pinterest-grid .item img {
+width: 100%;
+display: block;
+}
+.pinterest-grid .item .desc {
+padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .pinterest-grid {
+        column-count: 2;
+    }
+}
+.expo{
+width: 100%;
+display: block;
+}
+/*--------------------------------------CAPITULO 7-------------------------------------------*/
+.card-gran{
+    margin: 5%; /* Añade margen para separar las cartas */
+    flex: 0 0 auto; /* Evita que las cartas se redimensionen */
+    width: 90%; /* Cada carta ocupa todo el espacio disponible en el carrusel */
+    height: 85vh;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.5s ease; /* Añade transición suave para el movimiento */
+    box-sizing: border-box;
+}
+.card-gcontent {
+    display: flex;
+    justify-content: space-between; /* Coloca el título/texto a la izquierda y la imagen a la derecha */
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.card-gtext {
+    flex: 1;
+    padding-left: 5%; /* Espacio entre el texto y la imagen */
+}
+
+.card-gtitle{
+    font-size: 1.5rem;
+    font-family: "Lulo",sans-serif;
+    margin-bottom: 10px;
+}
+
+.card-gimage {
+    width: 40%; /* Tamaño de la imagen */
+    height: 60%;
+}
+
+.card-gdescription {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.card-gimage2 {
+    width: 100%; /* Tamaño de la imagen */
+    height: 100%;
+}
+.card-gtext2 {
+    flex: 1;
+}
+
+@media(max-width: 1025px){
+    .card-gdescription {
+        font-size: 0.85rem;
+    }
+}
+
+@media(max-width: 769px){
+    .card-gdescription {
+        font-size: 0.7rem !important;
+    }
+    .card-gran{
+        width: 97% !important;
+    }
+}
+@media(max-width: 654px){
+    .separacion_g{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cont_g{
+        width: 100%;
+    }
+    .cont_g2{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .card-gimage2 {
+        width: 30%; /* Tamaño de la imagen */
+         height: 50%;
+    }
+    .card-gtext2 {
+        margin-left: 2%;
+    }
+}
+@media(max-width: 483px){
+    .card-gran{
+        height: 94vh;
+        width: 98% !important;
+    }
+    .cont_g{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 2%;
+    }
+}
+@media(max-width: 426px){
+    .card-gran{
+        height: 65vh;
+    }
+    .card-gdescription {
+        font-size: 0.6rem !important;
+    }
+}
+
+/*----------------------------------------------------OBRA----------------------------------------------------------------*/
+.obra{
+    background:#bac4c8;
+}
+.fondo_texto{
+    background-color: #e2e699;
+    width: 90%;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+.cuadro {
+    position: relative;
+    perspective: 1000px; /* Asegura que la perspectiva se aplique al elemento principal */
+}
+.cuadro div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Esconde el lado opuesto durante la rotación */
+    transition: transform 1s; /* Cambié 'transition' a 'transform' para asegurar una transición suave */
+}
+.cuadro .front {
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro .front h1 {
+    position: absolute; /* Permite ubicar el texto dentro del contenedor */
+    bottom: 10px; /* Ajusta según el espacio que quieras desde abajo */
+    left: 10px; /* Ajusta según el espacio que quieras desde la izquierda */
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño del texto */
+    color:white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para mejor contraste */
+}
+
+.cuadro1 .front {
+    background-image: url('../img/clotilde_con_traje_gris/obra/mano_clotilde.png');
+}
+
+.cuadro2 .front {
+    background-image: url('../img/clotilde_con_traje_gris/obra/cara_clotilde.png');
+}
+
+.cuadro3 .front {
+    background-image: url('../img/clotilde_con_traje_gris/obra/vestido_clotilde.png');
+}
+
+.cuadro4 .front {
+    background-image: url('../img/clotilde_con_traje_gris/obra/vestido_rojo.jpg');
+    background-position: left center; /* Mostrar el lado izquierdo de la imagen */
+    background-size: cover; /* Asegura que cubra todo el espacio */
+    background-repeat: no-repeat; /* Evita que se repita */
+}
+
+.cuadro5 .front {
+    background-image: url('../img/clotilde_con_traje_gris/obra/fondo_clotilde.png');
+}
+
+.cuadro .back {
+    background-color: rgb(251, 251, 251);
+    font-size: 0.9rem;
+    transform: rotateY(180deg); /* La cara posterior comienza en 180deg, invisible inicialmente */
+}
+
+.cuadro.active .front {
+    transform: rotateY(180deg); /* Rota la cara frontal al activarse */
+}
+
+.cuadro.active .back {
+    transform: rotateY(0deg); /* Muestra la cara trasera al activarse */
+}
+
+
+@media(max-width: 2560px) {
+    .cuadro {
+        height: 50vh !important;
+        width: 100vh !important;
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 90vh !important;
+        width: 100vh !important;
+    }
+    .cuadro_vestido {
+        height: 90vh !important;
+        width: 100vh !important;
+    }
+    .cuadro_detalles {
+        height: 90vh !important;
+        width: 37vh !important;
+    }
+    .cuadro_detalles2 {
+        height: 90vh !important;
+        width: 60vh !important;
+    }
+}
+
+@media (max-width: 1025px) {
+    .cuadro {
+        height: 70vh !important;
+        width: 100vh !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 100vh !important;
+        width: 90vh !important;
+    }
+    .cuadro_vestido {
+        height: 100vh !important;
+        width: 100vh !important;
+    }
+    .cuadro_detalles {
+        height: 100vh !important;
+        width: 35vh !important;
+    }
+    .cuadro_detalles2 {
+        height: 100vh !important;
+        width: 54vh !important;
+    }
+    .a_titulo{
+        font-size: 5rem;
+    }
+    .c1-letras{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:1025px) and (min-width:769px){
+    .cuadro {
+        height: 70vh !important;
+        width: 70vh !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 100vh !important;
+        width: 75vh !important;
+    }
+    .cuadro_vestido {
+        height: 100vh !important;
+        width: 70vh !important;
+    }
+    .cuadro_detalles {
+        height: 100vh !important;
+        width: 30vh !important;
+    }
+    .cuadro_detalles2 {
+        height: 100vh !important;
+        width: 44vh !important;
+    }
+    .a_titulo{
+        font-size: 4rem;
+    }
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media(max-width:768px){
+    .cuadro {
+        height: 65vh !important;
+        width: 50vw !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 80vh !important;
+        width: 45vw !important;
+    }
+    .cuadro_vestido {
+        height: 70vh !important;
+        width: 50vw !important;
+    }
+    .cuadro_detalles {
+        height: 70vh !important;
+        width: 21vw !important;
+    }
+    .cuadro_detalles2 {
+        height: 70vh !important;
+        width: 24vw !important;
+    }
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media(max-width:734px){
+    .cuadro {
+        height: 45vh !important;
+        width: 50vw !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 60vh !important;
+        width: 45vw !important;
+        margin-bottom: 3% !important;
+    }
+    .cuadro_vestido {
+        height: 50vh !important;
+        width: 50vw !important;
+    }
+    .cuadro_detalles {
+        height: 60vh !important;
+        width: 21vw !important;
+    }
+    .cuadro_detalles2 {
+        height: 60vh !important;
+        width: 24vw !important;
+    }
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.7rem !important;
+    }
+}
+
+@media(max-width:683px){
+    .cuadro {
+        height: 45vh !important;
+        width: 50vw !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 70vh !important;
+        width: 45vw !important;
+        margin-bottom: 3% !important;
+    }
+    .cuadro_vestido {
+        height: 65vh !important;
+        width: 50vw !important;
+    }
+    .cuadro_detalles {
+        height: 67vh !important;
+        width: 21vw !important;
+    }
+    .cuadro_detalles2 {
+        height: 67vh !important;
+        width: 24vw !important;
+    }
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.7rem !important;
+    }
+}
+
+@media(max-width:637px){
+    .cuadro {
+        height: 50vh !important;
+        width: 50vw !important; 
+        margin-left: 3%; 
+    }
+    .cuadro_cara {
+        height: 75vh !important;
+        width: 45vw !important;
+        margin-bottom: 3% !important;
+    }
+    .cuadro_vestido {
+        height: 70vh !important;
+        width: 50vw !important;
+    }
+    .cuadro_detalles {
+        height: 70vh !important;
+        width: 22vw !important;
+    }
+    .cuadro_detalles2 {
+        height: 70vh !important;
+        width: 25vw !important;
+    }
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.7rem !important;
+    }
+}
+
+
+@media(max-width: 597px) {
+    .margen{
+        margin-top: 1rem; /* Ajusta el valor como necesites */
+    }
+    .margen-btn{
+        margin-bottom: 2rem;
+    }
+    .cuadros{
+        flex-wrap: wrap;
+    }
+    .cuadro {
+        height: 55vh !important;
+        width: 80vh !important; 
+    }
+    .cuadro_cara {
+        height: 80vh !important;
+        width: 80vh !important;
+    }
+    .cuadro_vestido {
+        height: 80vh !important;
+        width: 80vh !important;
+    }
+    .cuadro_detalles {
+        height: 80vh !important;
+        width: 40vh !important;
+    }
+    .cuadro_detalles2 {
+        height: 80vh !important;
+        width: 40vh !important;
+        margin-right: 3%;
+    } 
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.7rem !important;
+    }
+}
+
+@media(max-width: 426px) {
+    .cuadros{
+        flex-wrap: wrap;
+    }
+    .cuadro {
+        height: 55vh !important;
+        width: 90vw !important; 
+    }
+    .cuadro_cara {
+        height: 80vh !important;
+        width: 90vw !important;
+    }
+    .cuadro_vestido {
+        height: 80vh !important;
+        width: 90vw !important;
+    }
+    .cuadro_detalles {
+        height: 80vh !important;
+        width: 45vw !important;
+    }
+    .cuadro_detalles2 {
+        height: 80vh !important;
+        width: 45vw !important;
+        margin-right: 3%;
+    }
+}
+
+@media(max-width: 362px) {
+    .cuadro .back ,.fondo_texto {
+        font-size: 0.6rem !important;
+    }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>Galería con Marcos</title>
+    <style>
+        
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
+        background: #c2bf9e;
+    }
+
+    /*navbar*/
+    .nav-logo{
+        color:#07517f;
+    }
+    .navbar{
+        background: rgba(255, 255, 255, 0.242);
+    }
+
+    .nav-logo:hover{
+        color:#fbf31b;
+    }
+
+    .permanent-marker-regular {
+        font-family: "Permanent Marker", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .btn-custom {
+        background-color: #2a3d74;
+        color: white;
+        border: none; /* Sin borde */
+        border-radius: 0; /* Sin esquinas redondeadas */
+        padding: 10px 20px; /* Espaciado */
+        transition: background-color 0.3s ease; /* Efecto suave */
+    }
+
+    .btn-custom:hover {
+        background-color: #2a3d74; /* Cambio de color al pasar el mouse */
+        color: white;
+    }
+
+    /* Fondo del overlay (parte que oscurece el fondo) */
+    .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.1);  /* Cambia el valor del último parámetro para controlar la transparencia */
+    }
+
+    /* Fondo del modal (contenido del modal) */
+    .modal-content {
+        background-color:  rgba(42, 61, 116,0.8);
+        color:white;
+    }
+
+    @font-face {
+        font-family: "Safira";
+        src: url("../fonts/Safira March Personal Use Only.ttf");
+    }
+    @font-face {
+        font-family: "Lulo";
+        src: url("../fonts/Lulo-Clean-W01-One-Bold.ttf");
+    }
+        
+        /* Grid principal */
+        .pinterest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2em;
+        }
+        
+        /* Contenedor del cuadro - Cambio crucial aquí */
+        .item-container {
+            position: relative;
+            padding-bottom: 35px; /* Espacio para el texto */
+        }
+        
+        /* El item real (aquí mantenemos overflow: hidden) */
+        .item {
+            position: relative;
+            aspect-ratio: 1 / 1.25;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border: 15px solid #f5f5f5;
+            border-bottom-width: 35px;
+            background-color: #f8f8f8;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Texto SOBRE el borde inferior */
+        .texto-sobre-borde {
+            position: absolute;
+            bottom: 10px; /* Mitad superior del borde grueso */
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #2a3d74;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 3;
+            white-space: nowrap;
+            border: 1px solid #e0e0e0;
+        }
+        .item:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        .item1{
+            background-image: url('img/clotilde_con_traje_gris/clotilde_con_traje_gris.jpg');
+            background-position: 50% 25%;
+        }
+        .item2{
+            background-image: url('img/Joaquín_Sorolla_y_Bastida_-_Capturing_the_moment_-_Google_Art_Project.jpg');
+        }
+        .item3{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/mis_hijos.jpg');
+        }
+        .item4{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/clotilde_con_traje_gris/cosiendo_la_vela.jpg');
+        }
+        .item5{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/paris_point.jpg');
+        }
+        .item6{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/pescadora.jpg');
+        }
+        .item7{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/maria.jpg');
+        }
+        .item8{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/jardines.jpg');
+        }
+        .item9{
+            filter: grayscale(100%) contrast(110%);
+            background-image: url('img/orilla.jpg');
+        }
+        /* Estilo para tabs no activos */
+.nav-tabs .nav-link {
+  color: white !important; /* Texto blanco */
+  background-color: transparent !important; /* Fondo transparente */
+  border-color: transparent !important; /* Sin borde */
+}
+
+/* Estilo para tab activo */
+.nav-tabs .nav-link.active {
+  color: #333 !important; /* Color de texto para activo */
+  background-color: white !important; /* Fondo blanco */
+  border-color: #dee2e6 #dee2e6 white !important; /* Bordes del tab activo */
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top border border-white">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-logo" href="/">LUCE<span class="permanent-marker-regular">S</span> DEL ARTE</a>
+          <div class="text-end">
+            <button type="button" class="btn nav-logo" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="bi bi-input-cursor-text fs-4"></i>
+            </button>
+            <a href="/camara" class="btn nav-logo d-lg-none"><i class="bi bi-qr-code-scan fs-4"></i></a>
+          </div>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-body">
+                    <!-- Pestañas de navegación -->
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="numero-tab" data-bs-toggle="tab" data-bs-target="#numero-form" type="button" role="tab">
+                                Por número
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="nombre-tab" data-bs-toggle="tab" data-bs-target="#nombre-form" type="button" role="tab">
+                                Por nombre
+                            </button>
+                        </li>
+                        <li class="ms-auto"> <!-- Botón de cierre alineado a la derecha -->
+                            <button type="button" class="btn text-white fs-4 p-0" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </li>
+                    </ul>
+    
+                    <!-- Contenido de las pestañas -->
+                    <div class="tab-content" id="myTabContent">
+                        <!-- Formulario por número -->
+                        <div class="tab-pane fade show active" id="numero-form" role="tabpanel">
+                            <form id="formNumero" action="/verificar_numero.php" method="post">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="numeroInput" name="numero_cuadro" required>
+                                    <label for="numeroInput">Número del cuadro</label>
+                                </div>
+                                <button type="submit" class="btn btn-secondary rounded-0 mt-3">Continuar</button>
+                            </form>
+                        </div>
+    
+                        <!-- Formulario por nombre -->
+                        <div class="tab-pane fade" id="nombre-form" role="tabpanel">
+                            <form id="formNombre" action="/verificar_cuadro.php" method="post">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="nombreInput" name="nombre_cuadro" required>
+                                    <label for="nombreInput">Nombre del cuadro</label>
+                                </div>
+                                <button type="submit" class="btn btn-secondary rounded-0 mt-3">Continuar</button>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div id="mensajeResultado" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="pinterest-grid">
+            <div class="item item1">
+                <div class="texto-sobre-borde">La ubicación</div>
+            </div>
+            <div class="item item2">
+                <div class="texto-sobre-borde">La ubicación</div>
+            </div>
+            <div class="item item3">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item4">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item5">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item6">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item7">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item8">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+            <div class="item item9">
+                <div class="texto-sobre-borde">Próximamente</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

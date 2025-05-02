@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -12,15 +11,19 @@ body {
     color:#07517f;
 }
 .nav-logo:hover{
-    color:#ffffff;
+    color:#fbf31b;
 }
 .nav-menu{
     color:#07517f;
     font-size:20pt;
 }
+.navbar{
+    background: rgba(255, 255, 255, 0.242);
+}
 .bg-offcanvas{
     background: rgba(251, 252, 252, 0.4);
 }
+
 ul{
     list-style: none; 
     padding: 0; 
@@ -178,21 +181,9 @@ ul{
     }
 }
 /*---------------------------------------------------------------------------------------------*/
-.capitulo1{
-    background-color: #9baeba;
-}
-.capitulo2{
-    background-color: #57a5b5;
-}
+
 .capitulo3{
     background-color: #adccd2;
-}
-.capitulo4{
-    background-color: #adccd2;
-    height: 130vh;
-}
-.capitulo5{
-    background-color: #b7cbe7;
 }
 .obra1{
     background-color: #523b30;
@@ -261,7 +252,7 @@ font-style: normal;
     font-family: 'Safira', sans-serif;
     letter-spacing: 0.35em;
 }
-.ind,.cabecera{
+.ind{
     font-family: 'Safira', sans-serif;
 }
 
@@ -269,16 +260,8 @@ font-style: normal;
     font-family: 'Lulo', sans-serif;
 }
 
-.subtitulo,.a_titulo,.texto-movil,.p_t{
+.subtitulo,.a_titulo,.texto-movil,.menu,.p_t{
     font-family: 'Bebas Neue', sans-serif; /* Incluye una fuente de respaldo como sans-serif */
-}
-
-.subtitulo{
-    color:#07517f;
-}
-
-.subtitulo{
-    font-size: 2.3rem;
 }
 
 .sorolla,.numero{
@@ -433,177 +416,9 @@ font-style: normal;
 
 /*Capitulo 1*/
 
-.cuadro {
-    position: relative;
-    perspective: 1000px; /* Asegura que la perspectiva se aplique al elemento principal */
-}
-
-.cuadro div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden; /* Esconde el lado opuesto durante la rotación */
-    transition: transform 1s; /* Cambié 'transition' a 'transform' para asegurar una transición suave */
-}
-
-.cuadro .front {
-    transform: rotateY(0deg);
-    background-size: cover;
-    background-position: center;
-}
-
-.cuadro .front h1 {
-    position: absolute; /* Permite ubicar el texto dentro del contenedor */
-    bottom: 10px; /* Ajusta según el espacio que quieras desde abajo */
-    left: 10px; /* Ajusta según el espacio que quieras desde la izquierda */
-    margin: 0;
-    font-size: 1.5rem; /* Tamaño del texto */
-    color:white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para mejor contraste */
-}
-
-.cuadro1 .front {
-    background-image: url('../img/sol_de_tarde.jpg');
-}
-
-.cuadro2 .front {
-    background-image: url('../img/verano.jpg');
-}
-
-.cuadro3 .front {
-    background-image: url('../img/Georges_Petit.png');
-}
-
-.cuadro4 .front {
-    background-image: url('../img/pedro_gil.jpg');
-}
-
-.cuadro .back {
-    background-color: rgb(251, 251, 251);
-    font-size: 0.7rem;
-    transform: rotateY(180deg); /* La cara posterior comienza en 180deg, invisible inicialmente */
-}
-
-.cuadro.active .front {
-    transform: rotateY(180deg); /* Rota la cara frontal al activarse */
-}
-
-.cuadro.active .back {
-    transform: rotateY(0deg); /* Muestra la cara trasera al activarse */
-}
-/* Estilo personalizado para limitar la altura */
-.img-custom {
-    height: 35vh; /* Altura fija del 40% del viewport */
-    object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsión */
-    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-}
-
-@media (min-width: 1024px) {
-    .cuadro{
-        height: 60vh;
-    }
-}
-
-@media(max-width:1024px) and (min-width:576px){
-    .cuadro{
-        height: 60vh;
-    }
-    .img-custom{
-        height: 45vh; /* Altura fija del 40% del viewport */
-        object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsión */
-        width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-        margin-bottom: 1rem; /* Ajusta el valor como necesites */
-    }
-}
-
-@media(max-width: 576px) {
-    .cuadro{
-        height: 40vh;
-    }
-    .margen{
-        margin-top: 1rem; /* Ajusta el valor como necesites */
-    }
-}
 
 /*Capitulo 2*/
 
-.pedro_gil{
-    width: 20vw;
-    height: 50vh;
-}
-
-.acordeon{
-    height: 40vh;
-    width: 60vh;
-}
-
-@media (min-width: 1024px) {
-    .card_expo{
-        width: 50vw;
-    }
-    .artes{
-        height: 50vh;
-        width: 15vw;
-    }
-    .nombre_fotos{
-        font-size: 1.5rem;
-    }
-}
-
-@media(max-width:1024px) and (min-width:576px){
-    .card_expo{
-        width: 80vw;
-    }
-    .artes{
-        height: 50vh;
-        width: 20vw;
-    }
-    .margen{
-        margin-top: 1rem; /* Ajusta el valor como necesites */
-    }
-}
-
-@media (min-width: 376px) and (max-width: 576px) {
-    .card_expo{
-        width: 80vw;
-    }
-    .artes{
-        height: 50vh;
-        width: 35vw;
-    }
-    .nombre_fotos{
-        font-size: 1.3rem;
-    }
-}
-
-@media (min-width: 321px) and (max-width: 376px) {
-    .card_expo{
-        width: 80vw;
-    }
-    .artes{
-        height: 45vh;
-        width: 35vw;
-    }
-    .nombre_fotos{
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 321px) {
-    .card_expo{
-        width: 90vw;
-    }
-    .artes{
-        height: 45vh;
-        width: 38vw;
-    }
-    .nombre_fotos{
-        font-size: 1.2rem;
-    }
-}
 
 /*capitulo 3*/
 @font-face {
@@ -627,6 +442,7 @@ font-style: normal;
     font-family: "Lulo",sans-serif;
     font-size: 20pt;
 }
+
 @media (max-width: 428px) {
     .c3_tit{
         font-size: 12pt !important;
@@ -649,6 +465,7 @@ font-style: normal;
         font-size: 17pt !important;
     }
 }
+
 .card-custom {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     border: none; /* Sin borde */
@@ -658,8 +475,8 @@ font-style: normal;
 }
 
 .btn-custom {
-    background-color: #2a3d74;
-    color: white;
+    background-color: #2a3d74; /* Gris oscuro */
+    color: white; /* Texto negro */
     border: none; /* Sin borde */
     border-radius: 0; /* Sin esquinas redondeadas */
     padding: 10px 20px; /* Espaciado */
@@ -674,6 +491,8 @@ font-style: normal;
 .text-end {
     text-align: right; /* Alinea el botón a la derecha */
 }
+
+
 /* Grid estilo Pinterest usando columnas */
 .pinterest-grid {
     column-count: 3;
@@ -705,9 +524,16 @@ font-style: normal;
     display: block;
   }
 
+  .calle{
+    background-color: #adccd2;
+  }
 
-  /*capitulo 4*/
-.cap4-titulo{
+ /*capitulo 4*/
+ .capitulo4{
+    background-color: #adccd2;
+    height: 130vh;
+}
+ .cap4-titulo{
     font-family: "Lulo",sans-serif;
     color: white;
     font-size: 25pt;
@@ -808,7 +634,7 @@ font-style: normal;
     .card-reco {
         width: 87%; /* Se ajusta el tamaño de la carta para móviles */
         margin: 0 20px !important; /* Reduce el margen */
-        height: 60vh;
+        height: 80vh;
     }
 
     .card-title {
@@ -848,4 +674,520 @@ font-style: normal;
         width: 50% !important; /* Reduce el tamaño de la imagen */
         height: 50% !important;
     }
+    .capitulo4{
+        height: 100vh;
+    }
+}
+
+
+
+/*---------------------------------------------CAPITULO 1--------------------------------------------------------*/
+.capitulo1{
+    background-color: #9baeba;
+}
+.cuadro {
+    position: relative;
+    perspective: 1000px; /* Asegura que la perspectiva se aplique al elemento principal */
+}
+.subtitulo{
+    font-family: 'Bebas Neue', sans-serif; /* Incluye una fuente de respaldo como sans-serif */
+    color:#fad66a;
+    font-size: 2.3rem;
+}
+.cuadro div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Esconde el lado opuesto durante la rotación */
+    transition: transform 1s; /* Cambié 'transition' a 'transform' para asegurar una transición suave */
+}
+.cuadro .front {
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
+}
+.cuadro .front h1 {
+    position: absolute; /* Permite ubicar el texto dentro del contenedor */
+    bottom: 10px; /* Ajusta según el espacio que quieras desde abajo */
+    left: 10px; /* Ajusta según el espacio que quieras desde la izquierda */
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño del texto */
+    color:white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para mejor contraste */
+}
+.cuadro1 .front {
+    background-image: url('../img/sol_de_tarde.jpg');
+}
+.cuadro2 .front {
+    background-image: url('../img/verano.jpg');
+}
+.cuadro .back {
+    background-color: rgb(251, 251, 251);
+    font-size: 0.7rem;
+    transform: rotateY(180deg); /* La cara posterior comienza en 180deg, invisible inicialmente */
+}
+.cuadro.active .front {
+    transform: rotateY(180deg); /* Rota la cara frontal al activarse */
+}
+.cuadro.active .back {
+    transform: rotateY(0deg); /* Muestra la cara trasera al activarse */
+}
+
+@media(max-width: 2560px) {
+    .cuadro {
+        height: 50vh !important;
+        width: 100vh !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .cuadro {
+        height: 60vh;
+        width: 80vh;
+    }
+    .a_titulo{
+        font-size: 5rem;
+    }
+    .c1-letras{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:1025px) and (min-width:576px){
+    .cuadro {
+        height: 60vh;
+        width: 80vh;
+    }
+    .a_titulo{
+        font-size: 4rem;
+    }
+}
+@media(max-width:769px){
+    .a_titulo{
+        font-size: 3rem;
+    }
+    .c1-letras{
+        font-size: 1rem;
+    }
+}
+@media(max-width: 576px) {
+    .margen{
+        margin-top: 1rem; /* Ajusta el valor como necesites */
+    }
+    .margen-btn{
+        margin-bottom: 2rem;
+    }
+    .cuadro {
+        height: 60vh;
+        width: 100vw;
+    }
+    .cuadros{
+        flex-wrap: wrap;
+    }
+    .a_titulo{
+        font-size: 3rem;
+    }
+    @media(max-width: 321px) {
+        .cuadro {
+            height: 40vh;
+            width: 100vw;
+        }
+        .a_titulo{
+            font-size: 2rem;
+        }
+    }
+}
+/*------------------------------------------ CAPITULO 2-----------------------------------------------------------*/
+.capitulo2 {
+    position: relative;
+    background-image: url('../img/galeria_petit.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajusta para que la imagen ocupe todo el espacio */
+    background-position: center; /* Centra la imagen */
+    width: 100%; /* Asegura que el contenedor tenga un tamaño definido */
+    display: flex;
+}
+
+.capitulo2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/galeria_petit.jpg'); /* La misma imagen de fondo */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1.2px); /* Difumina solo la imagen */
+    z-index: -1; /* Asegura que la imagen se quede al fondo */
+}
+
+.container-fluid {
+    position: relative;
+    z-index: 1; /* Hace que el contenido esté por encima de la imagen difusa */
+}
+
+.cuadroc2 .texto{
+    font-size: 0.8rem;
+}
+
+.cabecera, .cuadroc2, .texto {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de la imagen difusa */
+}
+
+.cuadroc2 {
+    position: relative;
+    perspective: 1000px; /* Asegura que la perspectiva se aplique al elemento principal */
+}
+.cabecera,.cabecera2,.cabecera3{
+    font-family: 'Safira', sans-serif;
+}
+.cabecera2{
+    font-size: 1.5rem;
+    color: #2a3d74;
+}
+.cabecera3{
+    font-size: 1.5rem;
+}
+.cuadroc2 div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Esconde el lado opuesto durante la rotación */
+    transition: transform 1s; /* Cambié 'transition' a 'transform' para asegurar una transición suave */
+}
+.cuadroc2 .front {
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
+}
+.cuadroc2 .front h1 {
+    position: absolute; /* Permite ubicar el texto dentro del contenedor */
+    bottom: 10px; /* Ajusta según el espacio que quieras desde abajo */
+    left: 10px; /* Ajusta según el espacio que quieras desde la izquierda */
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño del texto */
+    color:white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para mejor contraste */
+}
+.cuadro3 .front {
+    background-image: url('../img/Georges_Petit.png');
+}
+.cuadro4 .front {
+    background-image: url('../img/pedro_gil.jpg');
+}
+.cuadroc2 .back {
+    background-color: rgb(251, 251, 251);
+    font-size: 0.7rem;
+    transform: rotateY(180deg); /* La cara posterior comienza en 180deg, invisible inicialmente */
+}
+.cuadroc2.active .front {
+    transform: rotateY(180deg); /* Rota la cara frontal al activarse */
+}
+.cuadroc2.active .back {
+    transform: rotateY(0deg); /* Muestra la cara trasera al activarse */
+}
+
+@media (min-width: 1439px) {
+    .cuadroc2 {
+        height: 40vh !important;
+        margin: 5%;
+    }
+    .fotosc2{
+        align-items: end;
+    }
+    .autor{
+        height: 40vh !important;
+    }
+}
+
+@media (min-width: 1023px) {
+    .cuadroc2 {
+        height: 45vh !important;
+        margin: 10%;
+    }
+    .fotosc2{
+        align-items: end;
+    }
+    .autor{
+        height: 45vh;
+    }
+}
+
+@media(max-width:1023px) and (min-width:576px){
+    .cuadroc2 {
+        height: 40vh !important;
+        margin: 10%;
+    }
+    .capitulo2{
+        align-items: end;
+    }
+    .autor{
+        height: 55vh !important;
+    }
+}
+
+@media(max-width: 576px) {
+    .cuadroc2 {
+        height: 50vh !important;
+    }
+    .cuadros{
+        flex-wrap: wrap;
+    }
+    .capitulo2{
+        flex-direction: column;
+    }
+    .fotos_c2{
+        flex-wrap: wrap;
+    }
+    .cabecera{
+        font-size: 1.8rem;
+    }
+    .cabecera2{
+        font-size: 1.2rem;
+        margin: 5%;
+    }
+    .autor{
+        height: 65vh !important;
+    }
+}
+@media(max-width: 321px) {
+    .cuadroc2 {
+        height: 60vh !important;
+    }
+    .cabecera{
+        font-size: 1.5rem;
+    }
+    .cabecera2{
+        font-size: 1rem;
+        margin: 5%;
+    }
+}
+
+.acordeon{
+    height: 40vh;
+    width: 60vh;
+}
+.nombre_fotos{
+    font-family: "Lulo",sans-serif;
+    font-size: 20pt;
+}
+
+@media (min-width: 1024px) {
+    .card_expo{
+        width: 50vw;
+    }
+    .artes{
+        width: 15vw;
+    }
+    .nombre_fotos{
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:1024px) and (min-width:576px){
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        width: 20vw;
+    }
+    .margen{
+        margin-top: 1rem; /* Ajusta el valor como necesites */
+    }
+}
+
+@media (min-width: 376px) and (max-width: 576px) {
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        width: 35vw;
+    }
+    .nombre_fotos{
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+    .card_expo{
+        width: 80vw;
+    }
+    .artes{
+        width: 35vw;
+    }
+    .nombre_fotos{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 321px) {
+    .card_expo{
+        width: 90vw;
+    }
+    .artes{
+        width: 33vw;
+    }
+    .nombre_fotos{
+        font-size: 1rem;
+    }
+}
+.carta{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.resaltado{
+    font-family: "Lulo",sans-serif;
+    font-size: 0.9rem;
+}
+.resaltado-fondo{
+    background-color: #fcf1d0;
+}
+/*-----------------------------------------OBRA--------------------------------------------------------------------*/
+.destino {
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    position: absolute; /* Se mantiene pero dentro del contenedor */
+    transition: opacity 1s ease-in-out;
+}
+/* Ocultar imágenes por defecto */
+.fade-img {
+    opacity: 0;
+}
+
+/* Solo la imagen activa será visible */
+.fade-img.active {
+    opacity: 1;
+    position: relative; /* Esto evita que se superponga a todo */
+}
+.imagenes {
+    position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ajusta según tu diseño */
+    overflow: hidden; /* Evita que se salga del área */
+}
+@media (min-width: 1025px) {
+    .insta{
+        justify-content: space-between;
+    }
+}
+@media(max-width:1025px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+    .insta{
+        justify-content: space-between;
+    }
+}
+
+@media(max-width:769px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+}
+
+@media(max-width:768px) and (min-width:427px){
+    .camara{
+        width: 50vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .insta_fotos{
+        width: 40vw!important;
+        height: 60vh;
+    }
+    .insta2_fotos{
+        width: 50vw !important;
+        font-size:0.6rem;
+    }
+    .insta3_fotos{
+        width: 90vw !important;
+        font-size:0.7rem;
+        display: flex;
+        justify-content: center;
+    }
+    .camara_texto{
+        font-size:0.7rem;
+        display: flex;
+        justify-content: start;
+    }
+}
+
+.capitulo5{
+    position: relative;
+    background-image: url('../img/amor.webp');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajusta para que la imagen ocupe todo el espacio */
+    background-position: center; /* Centra la imagen */
+    width: 100%; /* Asegura que el contenedor tenga un tamaño definido */
+    display: flex;
+    height: 100vh;
+}
+.cap5_letras{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background: #07517f69;
+    padding: 5%;
+}
+
+@media(max-width:426px){
+    .destino{
+        width: 30%;
+        height: 30%;
+    }
+    .insta_fotos{
+        width: 40vw!important;
+        height: 60vh;
+    }
+    .insta2_fotos{
+        width: 50vw !important;
+        font-size:0.6rem;
+    }
+    .insta3_fotos{
+        width: 90vw !important;
+        font-size:0.7rem;
+        justify-content: center;
+    }
+    .camara{
+        width: 90vw;
+        height: 50vh;
+    }
+    .camara_texto{
+        font-size:0.7rem;
+    }
+    .cap5_letras{
+        font-size:0.7rem;
+    }
+}
+
+.letras{
+    font-family: "Lulo",sans-serif;
+    color: #2a3d74;
+    font-size: 2rem;
+}
+.letras2{
+    font-family: "Lulo",sans-serif;
+    color: #313131;
+    font-size: 2rem;
+}
+.def{
+    font-family: "Safira",sans-serif;
+    color: #060606;
+    font-size: 2rem; 
 }

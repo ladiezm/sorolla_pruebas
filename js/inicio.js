@@ -15,9 +15,9 @@ function toggleContent(element) {
   }
   
 // JavaScript para togglear el menú en dispositivos móviles
-const menuToggle = document.querySelector('.menu-toggle');
+/*const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 
 menuToggle.addEventListener('click', () => {
   menu.classList.toggle('active');
-});
+});*/

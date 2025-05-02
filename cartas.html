@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas de Clotilde</title>
+    <style>
+        .preocupaciones {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            background-image: url('img/clotilde_con_traje_gris/fondo_preocupacion.jpg');
+            background-size: cover;  /* o 'contain' dependiendo de lo que necesites */
+            background-position: bottom;
+        }
+        .madrid{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            background-image: url('img/clotilde_con_traje_gris/vista-del-embarcadero-del-parque-del-retiro-1882-museo-sorolla.jpg');
+            background-size: cover;  /* o 'contain' dependiendo de lo que necesites */
+            background-position: bottom; 
+        }
+        @media(min-width:1441px){
+            .card {
+                width: 800px !important;
+                height: 900px !important;
+            }
+            .card-content {
+                font-size: 48px !important;
+            }
+        }
+        @media((max-width:1441px)and (min-width:1025px)){
+            .card {
+                width: 400px !important;
+                height: 470px !important;
+            }
+            .card-content {
+                font-size: 20px !important;
+            }
+            .preocupaciones,.madrid{
+                height: 100vh;
+            }
+
+        }
+        @media (min-width:1023px){
+            .preocupaciones,.madrid{
+                background-position: 50% 40%; 
+            }
+            .card-deck {
+                left: 18% !important;
+            }
+        }
+        @media((max-width:769px) and (min-width:426px)){
+            .preocupaciones,.madrid {
+                background-position: 50% 55%; 
+            }
+            .card-deck {
+                left: 10% !important;
+            }
+            
+            
+        }
+        
+        .card-deck {
+            position: relative;
+            perspective: 1200px;
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            margin: 0 auto; /* Centrado horizontal */
+            display: flex;
+            justify-content: center; /* Centrado horizontal interno */
+            transform: translateY(-20%); /* Reemplaza bottom: 20% */
+            left: 0;
+            right: 0;
+            bottom: 15%;
+        }
+        .img_card {
+            position: relative;
+            right:20%;
+        }
+        .img_card h1{
+            position: relative;
+            bottom: 15%;
+            font-size: 2.3rem;
+            right: 10%;
+            z-index: 5;
+            transform: scaleY(3);
+
+        }
+        .img_card img{
+            z-index: -5;
+        }
+        
+        .card {
+            position: absolute;
+            width: 200px;
+            height: 270px;
+            transition: all 0.5s ease;
+            transform-origin: bottom center;
+            cursor: pointer;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 2px;
+            border-top: 10px solid #2a3d74;
+        }
+        
+        .card-content {
+            width: 100%;
+            height: 100%;
+            font-size: 10px;
+            line-height: 1.2;
+            overflow-wrap: break-word;
+        }
+        
+        .card-selected {
+            z-index: 10;
+            transform: scale(1.2) translateX(-50%) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .card:nth-child(1) {
+            transform: rotate(-30deg);
+            left: 50%;
+        }
+        .card:nth-child(2) {
+            transform: rotate(-10deg);
+            left: 50%;
+        }
+        .card:nth-child(3) {
+            transform: rotate(10deg);
+            left: 50%;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/old-map.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .signature {
+            font-style: italic;
+            text-align: right;
+            margin-top: 3px;
+            color: #666;
+        }
+        .tit_pre {
+            position: absolute; /* Cambia de 'relative' a 'absolute' */
+            top: 20px; /* Ajusta la distancia desde arriba */
+            left: 20px; /* Ajusta la distancia desde la izquierda */
+            margin: 0; /* Elimina márgenes por defecto */
+            font-size: 2rem; /* Tamaño opcional */
+            color: #fff; /* Color contrastante (ej. blanco) */
+            z-index: 10; /* Asegura que esté sobre la imagen de fondo */
+        }
+    </style>
+</head>
+<body>
+    <div class="preocupaciones">
+        <h3 class="tit_pre">Preocupaciones de Clotilde</h3>
+        <div class="card-deck">
+            <!-- Carta 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Mi querido Joaquín,</p>
+                    <p>Mientras tú disfrutas de las mieles del éxito, confieso que vivo este reconocimiento con sentimientos encontrados. Mi corazón rebosa de orgullo al ver tus logros, cada nueva obra tuya es un motivo de alegría para esta humilde esposa.</p>
+                    <div class="signature">Con amor,Clotilde</div>
+                </div>
+            </div>
+            
+            <!-- Carta 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Queridísimo esposo,</p>
+                    <p>Esta creciente fama que te rodea impone nuevas obligaciones sociales que, debo confesarte, me intimidan profundamente. Las recepciones y tertulias me alejan de esa intimidad que tanto valoramos y que fue el sustento de nuestros primeros años.</p>
+                    <div class="signature">Siempre tuya,Clotilde</div>
+                </div>
+            </div>
+            
+            <!-- Carta 3 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Mi admirado Joaquín,</p>
+                    <p>En mis noches de soledad, releo tus cartas y contemplo tus bocetos. Mi admiración por ti crece con cada día que pasa, pero también aumenta mi pesar por estas largas separaciones que tu trabajo nos impone.</p>
+                    <div class="signature">Con nostalgia,Clotilde</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="madrid">
+        <h3 class="tit_pre">Volviendo a Madrid</h3>
+        <div class="card-deck">
+            
+            <!-- Carta 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Mi querido Joaquín,</p>
+                    <p>María arde en fiebre desde anoche. El médico dice que es leve, pero en Madrid, con esas epidemias que azotan, no me atrevería a arriesgarme. Por eso he decidido quedarme en casa de mis padres hasta que se recupere.
+
+                        ¡Qué Navidad tan extraña! Aquí todo es bullicio y dulces, mientras tú debes estar en aquel estudio frío. Te extraño hasta en los detalles más pequeños. Vuelve pronto, aunque sea en una de esas cartas que guardo como tesoros.</p>
+                    <div class="signature">Tu Clotilde</div>
+                </div>
+            </div>
+
+            <!-- Carta 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Estimado maestro,</p>
+                    <p>Madrid es un lobo hambriento, y yo un pintor con más sueños que pan. Cada cuadro que logro vender —un retrato aquí, un paisaje allá— es un día más de alivio para Clotilde, que administra hasta el último céntimo como si fuera oro.
+
+                        Pero no me quejo. En cada galería donde cuelgo mis obras, siento que el nombre "Sorolla" empieza a resonar. Sé que esta lucha es necesaria.</p>
+                    <div class="signature">Su discípulo, Joaquín</div>
+                </div>
+            </div>
+
+            <!-- Carta 3 -->
+            <div class="card">
+                <div class="card-content">
+                    <p>Querida Amalia,</p>
+                    <p>Te escribo entre cajas de acuarelas y cuentas sin pagar. Estos meses en Italia han sido dulces y amargos a la vez: Joaquín trabaja sin descanso, enviando sus paisajes al señor Jover, quien los vende en Buenos Aires. Pero con la guerra de Cuba los encargos cesaron. Ayer contamos nuestras monedas: solo cincuenta liras nos quedan.
+
+                        Sin embargo, ¿sabes qué me sostiene? Ver a mi marido levantarse antes del alba, decidido a pintar aunque el mundo se derrumbe.</p>
+                    <div class="signature">Tuya, Clotilde</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt perspiciatis nisi consequatur dolores provident ratione necessitatibus ducimus voluptate aliquam, nemo optio alias culpa, blanditiis nobis consequuntur fugit voluptatibus voluptas!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis pariatur vel neque cumque earum, quae rem fugiat temporibus iste nemo et recusandae nihil voluptatem tempore sed. Id, quas vero?ç
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            // Efecto de selección de cartas
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    if(this.classList.contains('card-selected')) {
+                        this.classList.remove('card-selected');
+                    } else {
+                        cards.forEach(innerCard => innerCard.classList.remove('card-selected'));
+                        this.classList.add('card-selected');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
