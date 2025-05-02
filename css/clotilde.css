@@ -1499,90 +1499,33 @@ display: block;
     }
 }
 
-@media(max-width:734px){
-    .cuadro {
-        height: 45vh !important;
-        width: 50vw !important; 
-        margin-left: 3%; 
-    }
-    .cuadro_cara {
-        height: 60vh !important;
-        width: 45vw !important;
-        margin-bottom: 3% !important;
-    }
-    .cuadro_vestido {
-        height: 50vh !important;
-        width: 50vw !important;
-    }
-    .cuadro_detalles {
-        height: 60vh !important;
-        width: 21vw !important;
-    }
-    .cuadro_detalles2 {
-        height: 60vh !important;
-        width: 24vw !important;
-    }
-    .cuadro .back ,.fondo_texto {
-        font-size: 0.7rem !important;
-    }
-}
-
 @media(max-width:683px){
     .cuadro {
-        height: 45vh !important;
-        width: 50vw !important; 
+        height: 35vh !important;
+        width: 40vw !important; 
         margin-left: 3%; 
     }
     .cuadro_cara {
-        height: 70vh !important;
-        width: 45vw !important;
+        height: 60vh !important;
+        width: 35vw !important;
         margin-bottom: 3% !important;
     }
     .cuadro_vestido {
-        height: 65vh !important;
-        width: 50vw !important;
+        height: 55vh !important;
+        width: 40vw !important;
     }
     .cuadro_detalles {
-        height: 67vh !important;
-        width: 21vw !important;
+        height: 57vh !important;
+        width: 11vw !important;
     }
     .cuadro_detalles2 {
-        height: 67vh !important;
-        width: 24vw !important;
+        height: 57vh !important;
+        width: 14vw !important;
     }
     .cuadro .back ,.fondo_texto {
-        font-size: 0.7rem !important;
+        font-size: 0.6rem !important;
     }
 }
-
-@media(max-width:637px){
-    .cuadro {
-        height: 50vh !important;
-        width: 50vw !important; 
-        margin-left: 3%; 
-    }
-    .cuadro_cara {
-        height: 75vh !important;
-        width: 45vw !important;
-        margin-bottom: 3% !important;
-    }
-    .cuadro_vestido {
-        height: 70vh !important;
-        width: 50vw !important;
-    }
-    .cuadro_detalles {
-        height: 70vh !important;
-        width: 22vw !important;
-    }
-    .cuadro_detalles2 {
-        height: 70vh !important;
-        width: 25vw !important;
-    }
-    .cuadro .back ,.fondo_texto {
-        font-size: 0.7rem !important;
-    }
-}
-
 
 @media(max-width: 597px) {
     .margen{
