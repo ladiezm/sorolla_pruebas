@@ -1472,7 +1472,7 @@ display: block;
     }
 }
 
-@media(max-width:788px){
+@media(max-width:788 px){
     .cuadro {
         height: 65vh !important;
         width: 50vw !important; 
@@ -1563,7 +1563,7 @@ display: block;
     }
 }
 
-@media(max-width: 426px) {
+@media(max-width: 429px) {
     .cuadros{
         flex-wrap: wrap;
     }
