@@ -1442,7 +1442,7 @@ display: block;
     }
 }
 
-@media(max-width:1025px) and (min-width:769px){
+@media(max-width:1025px) and (min-width:789px){
     .cuadro {
         height: 70vh !important;
         width: 70vh !important; 
@@ -1472,7 +1472,7 @@ display: block;
     }
 }
 
-@media(max-width:768px){
+@media(max-width:788px){
     .cuadro {
         height: 65vh !important;
         width: 50vw !important; 
