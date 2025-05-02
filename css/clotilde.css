@@ -1475,12 +1475,12 @@ display: block;
 @media(max-width:768px){
     .cuadro {
         height: 25vh !important;
-        width: 20vw !important; 
+        width: 10vw !important; 
         margin-left: 3%; 
     }
     .cuadro_cara {
         height: 40vh !important;
-        width: 30vw !important;
+        width: 20vw !important;
         margin-bottom: 3% !important;
     }
     .cuadro_vestido {
