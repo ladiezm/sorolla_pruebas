@@ -1474,13 +1474,13 @@ display: block;
 
 @media(max-width:768px){
     .cuadro {
-        height: 25vh !important;
-        width: 20vw !important; 
+        height: 35vh !important;
+        width: 40vw !important; 
         margin-left: 3%; 
     }
     .cuadro_cara {
-        height: 40vh !important;
-        width: 30vw !important;
+        height: 60vh !important;
+        width: 35vw !important;
         margin-bottom: 3% !important;
     }
     .cuadro_vestido {
