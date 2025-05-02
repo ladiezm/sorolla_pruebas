@@ -1474,33 +1474,6 @@ display: block;
 
 @media(max-width:768px){
     .cuadro {
-        height: 65vh !important;
-        width: 50vw !important; 
-        margin-left: 3%; 
-    }
-    .cuadro_cara {
-        height: 80vh !important;
-        width: 45vw !important;
-    }
-    .cuadro_vestido {
-        height: 70vh !important;
-        width: 50vw !important;
-    }
-    .cuadro_detalles {
-        height: 70vh !important;
-        width: 21vw !important;
-    }
-    .cuadro_detalles2 {
-        height: 70vh !important;
-        width: 24vw !important;
-    }
-    .cuadro .back ,.fondo_texto {
-        font-size: 0.8rem !important;
-    }
-}
-
-@media(max-width:683px){
-    .cuadro {
         height: 35vh !important;
         width: 40vw !important; 
         margin-left: 3%; 
